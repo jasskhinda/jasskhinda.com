@@ -1,18 +1,26 @@
 'use client'
 
-import { useProgress } from '@react-three/drei'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
 export default function LoadingScreen() {
-  const { progress } = useProgress()
+  const [progress, setProgress] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    if (progress === 100) {
-      setTimeout(() => setIsLoaded(true), 500)
-    }
-  }, [progress])
+    const timer = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(timer)
+          setTimeout(() => setIsLoaded(true), 500)
+          return 100
+        }
+        return prev + 2
+      })
+    }, 50)
+
+    return () => clearInterval(timer)
+  }, [])
 
   return (
     <AnimatePresence>
@@ -55,15 +63,18 @@ export default function LoadingScreen() {
               transition={{ delay: 0.2 }}
               className="text-3xl font-bold text-white mb-2"
             >
-              Initializing 3D Experience
+              Loading 3D Experience
             </motion.h1>
             
             <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: `${progress}%` }}
               className="w-64 h-1 bg-gray-800 rounded-full overflow-hidden mx-auto"
             >
-              <div className="h-full bg-gradient-to-r from-blue-600 to-purple-600" />
+              <motion.div 
+                className="h-full bg-gradient-to-r from-blue-600 to-purple-600"
+                initial={{ width: "0%" }}
+                animate={{ width: `${progress}%` }}
+                transition={{ duration: 0.2 }}
+              />
             </motion.div>
             
             <motion.p

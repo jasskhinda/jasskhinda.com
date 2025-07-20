@@ -1,7 +1,7 @@
 'use client'
 
 import { Canvas } from '@react-three/fiber'
-import { Suspense, useRef } from 'react'
+import { Suspense, useRef, useState, useEffect } from 'react'
 import { Float, Center, OrbitControls, Stars } from '@react-three/drei'
 import { Bloom, EffectComposer } from '@react-three/postprocessing'
 import * as THREE from 'three'
@@ -80,11 +80,44 @@ function ParticleField() {
 }
 
 export default function Hero3D() {
+  const [hasError, setHasError] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      // If Canvas hasn't rendered after 5 seconds, show fallback
+      setHasError(true)
+    }, 5000)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (hasError) {
+    return (
+      <div className="h-screen w-full relative bg-gradient-to-br from-gray-900 via-gray-800 to-black flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-6xl font-bold text-white mb-4">JASS KHINDA</h1>
+          <h2 className="text-2xl text-gray-300 mb-8">Full-Stack Developer</h2>
+          <div className="bg-blue-600/20 border border-blue-600/30 rounded-lg p-4 mb-8">
+            <p className="text-white">🚀 3 healthcare apps in 19 days</p>
+          </div>
+          <a
+            href="#about"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-medium transition-colors"
+          >
+            Explore Portfolio
+          </a>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="h-screen w-full relative">
       <Canvas
         camera={{ position: [0, 0, 8], fov: 60 }}
         className="absolute inset-0"
+        gl={{ antialias: false, alpha: false }}
+        dpr={[1, 1.5]}
       >
         <Suspense fallback={null}>
           <color attach="background" args={['#000000']} />

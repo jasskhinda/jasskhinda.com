@@ -7,7 +7,7 @@ const featuredProject = {
   title: 'Compassionate Caregivers App Ecosystem',
   description: 'Complete healthcare transportation management system built from scratch',
   longDescription: 'Inherited 5 unfinished apps that had been in development for 3 years by 2 previous developers. Rebuilt the entire system from scratch using modern technologies and delivered 3 production-ready apps in just 19 days.',
-  tech: ['Next.js', 'Supabase', 'TypeScript', 'Tailwind CSS', 'Real-time Updates'],
+  tech: ['Next.js', 'React.js', 'Supabase', 'Tailwind CSS', 'MongoDB', 'Firebase', 'Real-time Updates'],
   stats: {
     daysToComplete: 19,
     appsBuilt: 3,
@@ -15,11 +15,36 @@ const featuredProject = {
     previousDevTime: '3 years'
   },
   apps: [
-    { name: 'Booking App', status: 'completed', description: 'Client-facing booking interface' },
-    { name: 'Driver App', status: 'completed', description: 'Real-time driver management' },
-    { name: 'Dispatcher Dashboard', status: 'completed', description: 'Centralized dispatch control' },
-    { name: 'Admin Panel', status: 'in-progress', description: 'System administration' },
-    { name: 'Facility Portal', status: 'in-progress', description: 'Healthcare facility interface' }
+    { 
+      name: 'Facility Portal', 
+      status: 'completed', 
+      description: 'Healthcare facility interface',
+      url: 'https://facility.compassionatecaretransportation.com/'
+    },
+    { 
+      name: 'Booking App', 
+      status: 'completed', 
+      description: 'Client-facing booking interface',
+      url: 'https://book.compassionatecaretransportation.com/'
+    },
+    { 
+      name: 'Dispatcher Dashboard', 
+      status: 'completed', 
+      description: 'Centralized dispatch control',
+      url: 'https://dispatch.compassionatecaretransportation.com/'
+    },
+    { 
+      name: 'Admin Panel', 
+      status: 'in-progress', 
+      description: 'System administration',
+      url: 'https://admin.compassionatecaretransportation.com/'
+    },
+    { 
+      name: 'Driver App', 
+      status: 'in-progress', 
+      description: 'Real-time driver management',
+      url: 'https://driver.compassionatecaretransportation.com/'
+    }
   ],
   impact: [
     'Reduced booking time by 75%',
@@ -31,6 +56,14 @@ const featuredProject = {
 
 const otherProjects = [
   {
+    title: 'Compassionate Caregivers HC App',
+    description: 'Healthcare management platform with real-time features',
+    tech: ['Next.js', 'React.js', 'Supabase', 'MongoDB'],
+    type: 'Full-Stack Development',
+    highlights: ['Real-time updates', 'User management system', 'Secure healthcare data'],
+    url: 'http://ccapp.compassionatecaregivershc.com/'
+  },
+  {
     title: 'Modern Portfolio Site',
     description: 'This portfolio - rebuilt from WordPress to Next.js',
     tech: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion'],
@@ -38,18 +71,11 @@ const otherProjects = [
     highlights: ['Modern tech stack', 'Optimized performance', 'Professional design']
   },
   {
-    title: 'KFresh E-commerce Platform',
-    description: 'Full-featured e-commerce solution with inventory management',
-    tech: ['WordPress/WooCommerce', 'Custom Development', 'Payment Integration'],
-    type: 'Client Solution',
-    highlights: ['Increased sales by 40%', 'Streamlined operations', 'Mobile optimized']
-  },
-  {
-    title: 'R&J Medical Website',
-    description: 'Professional medical practice website with appointment booking',
-    tech: ['WordPress', 'Custom Theme', 'SEO Optimization'],
-    type: 'Client Solution',
-    highlights: ['Improved patient engagement', 'Online booking system', 'HIPAA compliant']
+    title: 'E-commerce Solutions',
+    description: 'Multiple e-commerce platforms built with WordPress and Shopify',
+    tech: ['WordPress/WooCommerce', 'Shopify', 'Payment Integration'],
+    type: 'E-commerce Development',
+    highlights: ['150+ stores built', 'Custom themes', 'Conversion optimized']
   }
 ]
 
@@ -116,22 +142,28 @@ export default function Works() {
               <h4 className="text-xl font-semibold text-white mb-4">Apps in the Ecosystem:</h4>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {featuredProject.apps.map((app, index) => (
-                  <div
+                  <a
                     key={index}
-                    className="bg-gray-800/50 border border-gray-700 rounded-lg p-4"
+                    href={app.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 block hover:border-blue-600/50 transition-all hover:transform hover:scale-105 group"
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <h5 className="font-semibold text-white">{app.name}</h5>
+                      <h5 className="font-semibold text-white group-hover:text-blue-400 transition-colors flex items-center gap-2">
+                        {app.name}
+                        <ExternalLink size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </h5>
                       <span className={`text-xs px-2 py-1 rounded-full ${
                         app.status === 'completed' 
                           ? 'bg-green-600/20 text-green-400' 
                           : 'bg-blue-600/20 text-blue-400'
                       }`}>
-                        {app.status === 'completed' ? 'Completed' : 'In Progress'}
+                        {app.status === 'completed' ? 'Live' : 'In Progress'}
                       </span>
                     </div>
                     <p className="text-gray-400 text-sm">{app.description}</p>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
@@ -187,7 +219,16 @@ export default function Works() {
                   <span className="text-xs text-gray-400 bg-gray-700 px-3 py-1 rounded-full">
                     {project.type}
                   </span>
-                  <ExternalLink className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer" size={18} />
+                  {project.url && (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-blue-400 transition-colors"
+                    >
+                      <ExternalLink size={18} />
+                    </a>
+                  )}
                 </div>
                 
                 <h4 className="text-xl font-semibold text-white mb-3">

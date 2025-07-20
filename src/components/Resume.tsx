@@ -8,15 +8,24 @@ const skills = {
     { name: 'Next.js', level: 90 },
     { name: 'React.js', level: 85 },
     { name: 'Supabase', level: 85 },
-    { name: 'JavaScript/TypeScript', level: 80 },
-    { name: 'Node.js', level: 70 },
-    { name: 'Firebase', level: 75 }
+    { name: 'Firebase', level: 80 },
+    { name: 'MongoDB', level: 75 },
+    { name: 'Tailwind CSS', level: 90 }
   ],
-  secondary: [
+  web: [
+    { name: 'HTML/CSS', level: 95 },
+    { name: 'JavaScript', level: 85 },
+    { name: 'TypeScript', level: 70 },
+    { name: 'Bootstrap', level: 80 }
+  ],
+  mobile: [
+    { name: 'React Native', level: 75 },
+    { name: 'Mobile-First Design', level: 85 }
+  ],
+  ecommerce: [
     { name: 'WordPress', level: 95 },
-    { name: 'Digital Marketing', level: 85 },
-    { name: 'SEO', level: 80 },
-    { name: 'AI Integration', level: 75 }
+    { name: 'Shopify', level: 85 },
+    { name: 'WooCommerce', level: 90 }
   ]
 }
 
@@ -103,10 +112,11 @@ export default function Resume() {
             Technical Skills
           </h3>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="space-y-12">
+            {/* Primary Skills */}
             <div>
-              <h4 className="text-lg font-semibold text-gray-300 mb-4">Primary Stack (Job-Ready)</h4>
-              <div className="space-y-4">
+              <h4 className="text-lg font-semibold text-blue-400 mb-6">Full-Stack Development (Primary Focus)</h4>
+              <div className="grid md:grid-cols-2 gap-x-8 gap-y-4">
                 {skills.primary.map((skill) => (
                   <div key={skill.name}>
                     <div className="flex justify-between items-center mb-2">
@@ -125,11 +135,12 @@ export default function Resume() {
                 ))}
               </div>
             </div>
-            
+
+            {/* Web Development */}
             <div>
-              <h4 className="text-lg font-semibold text-gray-300 mb-4">Additional Skills</h4>
-              <div className="space-y-4">
-                {skills.secondary.map((skill) => (
+              <h4 className="text-lg font-semibold text-gray-300 mb-6">Web Development</h4>
+              <div className="grid md:grid-cols-2 gap-x-8 gap-y-4">
+                {skills.web.map((skill) => (
                   <div key={skill.name}>
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-gray-300 font-medium">{skill.name}</span>
@@ -145,6 +156,53 @@ export default function Resume() {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            {/* Mobile & E-commerce */}
+            <div className="grid md:grid-cols-2 gap-12">
+              <div>
+                <h4 className="text-lg font-semibold text-gray-300 mb-6">Mobile Development</h4>
+                <div className="space-y-4">
+                  {skills.mobile.map((skill) => (
+                    <div key={skill.name}>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-gray-300 font-medium">{skill.name}</span>
+                        <span className="text-gray-400 text-sm">{skill.level}%</span>
+                      </div>
+                      <div className="bg-gray-700 rounded-full h-2">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.level}%` }}
+                          transition={{ duration: 1, delay: 0.2 }}
+                          className="bg-green-600 h-2 rounded-full"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-300 mb-6">E-commerce Development</h4>
+                <div className="space-y-4">
+                  {skills.ecommerce.map((skill) => (
+                    <div key={skill.name}>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-gray-300 font-medium">{skill.name}</span>
+                        <span className="text-gray-400 text-sm">{skill.level}%</span>
+                      </div>
+                      <div className="bg-gray-700 rounded-full h-2">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.level}%` }}
+                          transition={{ duration: 1, delay: 0.2 }}
+                          className="bg-purple-600 h-2 rounded-full"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

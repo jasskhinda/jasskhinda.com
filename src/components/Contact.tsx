@@ -324,7 +324,7 @@ export default function Contact() {
           className="text-center mt-16 pt-8 border-t border-[#75ccca]/30"
         >
           <p className="text-white/70">
-            © 2024 Jaspal Singh (Jass Khinda). Built with Next.js, React, and Tailwind CSS.
+            © 2025 Jaspal Singh (Jass Khinda). Portfolio
           </p>
         </motion.div>
       </div>

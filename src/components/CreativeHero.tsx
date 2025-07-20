@@ -157,7 +157,7 @@ export default function CreativeHero() {
                 🏆 Completed 3 Healthcare Apps in 19 Days
               </p>
               <p className="text-gray-300">
-                What 2 previous developers couldn't finish in 3 years
+                What 2 previous developers couldn&apos;t finish in 3 years
               </p>
             </motion.div>
           </motion.div>

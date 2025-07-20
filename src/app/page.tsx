@@ -72,7 +72,7 @@ export default function Home() {
                 <span className="text-xs bg-yellow-400 text-black px-2 py-1 rounded-full font-bold">NEW</span>
               </div>
               <div className="text-xs opacity-90 font-semibold">3 apps delivered in 19 days</div>
-              <div className="text-xs text-yellow-200 mt-1 font-medium">What others couldn't do in 3 years</div>
+              <div className="text-xs text-yellow-200 mt-1 font-medium">What others couldn&apos;t do in 3 years</div>
             </div>
           </div>
         </div>

@@ -32,7 +32,7 @@ export default function About() {
             </p>
 
             <p className="text-white text-lg leading-relaxed">
-              As an international student in Canada, I&apos;m driven to secure a full-time developer position that will support my PR pathway. I bring the same dedication and problem-solving skills that impressed my current employer to every project I work on.
+              I&apos;m driven to secure a full-time developer position where I can bring immediate value to your team. I thrive on solving complex challenges and delivering high-quality solutions that exceed expectations.
             </p>
 
             <div className="bg-gradient-to-r from-[#75ccca]/10 to-[#0e8774]/10 border border-[#75ccca]/20 rounded-lg p-6">

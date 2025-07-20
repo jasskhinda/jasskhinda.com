@@ -63,7 +63,7 @@ export default function LoadingScreen() {
               transition={{ delay: 0.2 }}
               className="text-3xl font-bold text-white mb-2"
             >
-              Loading 3D Experience
+              LOADING....
             </motion.h1>
             
             <motion.div

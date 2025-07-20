@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { ExternalLink, Star, Clock, Users, Zap, Eye, Code2, Rocket } from 'lucide-react'
 
@@ -59,34 +59,81 @@ const featuredProject = {
 
 const otherProjects = [
   {
-    title: 'CC Healthcare App',
-    description: 'Real-time healthcare management platform with advanced user management',
-    tech: ['React.js', 'Supabase', 'MongoDB'],
-    type: 'Healthcare Platform',
+    title: 'KFresh Organic Groceries',
+    description: 'Premium organic grocery e-commerce platform with advanced filtering and ordering',
+    tech: ['WordPress', 'WooCommerce', 'Custom PHP'],
+    type: 'E-commerce Platform',
     status: 'Live Production',
-    url: 'http://ccapp.compassionatecaregivershc.com/',
-    highlights: ['Real-time updates', 'Secure data handling', 'User management']
+    url: 'http://kfresh.ca/',
+    highlights: ['Organic product catalog', 'Advanced search', 'Order management']
   },
   {
-    title: 'Interactive 3D Portfolio',
-    description: 'This very portfolio showcasing advanced web technologies',
-    tech: ['Next.js', 'Three.js', 'Framer Motion', 'Tailwind'],
-    type: 'Portfolio Showcase',
-    status: 'Live Demo',
-    highlights: ['3D interactions', 'Advanced animations', 'Modern design']
+    title: 'Fenning Farms',
+    description: 'Agricultural business website with product showcase and contact system',
+    tech: ['WordPress', 'Custom CSS', 'PHP'],
+    type: 'Business Website',
+    status: 'Live Production',
+    url: 'https://fenningfarms.com/',
+    highlights: ['Product showcase', 'Farm gallery', 'Contact integration']
   },
   {
-    title: 'E-commerce Empire',
-    description: '150+ successful online stores built with conversion optimization',
-    tech: ['WordPress', 'Shopify', 'WooCommerce'],
-    type: 'E-commerce Solutions',
-    status: 'Multiple Live Sites',
-    highlights: ['150+ stores delivered', 'Conversion optimized', 'Revenue focused']
+    title: 'R&J Medical Services',
+    description: 'Professional healthcare services website with appointment booking',
+    tech: ['WordPress', 'Custom Theme', 'Contact Forms'],
+    type: 'Healthcare Website',
+    status: 'Live Production',
+    url: 'https://randjmedicalservices.com/',
+    highlights: ['Service listings', 'Appointment booking', 'Professional design']
+  },
+  {
+    title: 'BugzBugMe Pest Control',
+    description: 'Pest control services website with service area mapping',
+    tech: ['WordPress', 'Custom Design', 'Maps Integration'],
+    type: 'Service Business',
+    status: 'Live Production',
+    url: 'https://bugzbugme.com/',
+    highlights: ['Service areas', 'Quote requests', 'Professional branding']
+  },
+  {
+    title: 'My5Health Wellness',
+    description: 'Health and wellness platform with product catalog',
+    tech: ['WordPress', 'E-commerce', 'Health Plugins'],
+    type: 'Health Platform',
+    status: 'Live Production',
+    url: 'http://my5health.com/',
+    highlights: ['Wellness products', 'Health resources', 'User accounts']
+  },
+  {
+    title: 'iVitaBoost Supplements',
+    description: 'Vitamin and supplement e-commerce store with subscription model',
+    tech: ['WordPress', 'WooCommerce', 'Subscription System'],
+    type: 'E-commerce Store',
+    status: 'Live Production',
+    url: 'http://ivitaboost.com/',
+    highlights: ['Subscription products', 'Supplement catalog', 'Recurring billing']
+  },
+  {
+    title: 'The Mug Coffee Shop',
+    description: 'Local coffee shop website with menu and location details',
+    tech: ['WordPress', 'Custom Theme', 'Menu System'],
+    type: 'Restaurant Website',
+    status: 'Live Production',
+    url: 'http://themug.com/',
+    highlights: ['Digital menu', 'Location info', 'Coffee shop branding']
+  },
+  {
+    title: 'Griggsby Station',
+    description: 'Community website with event listings and local information',
+    tech: ['WordPress', 'Event Management', 'Community Features'],
+    type: 'Community Platform',
+    status: 'Live Production',
+    url: 'https://griggsbystation.net/',
+    highlights: ['Event calendar', 'Community news', 'Local directory']
   }
 ]
 
 export default function ProjectShowcase() {
-  const [selectedApp, setSelectedApp] = useState(0)
+  // const [selectedApp, setSelectedApp] = useState(0)
   const [hoveredProject, setHoveredProject] = useState<number | null>(null)
 
   return (
@@ -208,67 +255,50 @@ export default function ProjectShowcase() {
               </motion.div>
             </div>
 
-            {/* App Selector */}
+            {/* Full Stack Apps Section */}
             <div className="mb-8">
-              <h4 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <h4 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
                 <Rocket className="text-[#75ccca]" />
-                Live Production Apps
+                FULL STACK APPS
               </h4>
-              <div className="flex flex-wrap gap-3 mb-6">
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {featuredProject.apps.map((app, index) => (
-                  <motion.button
+                  <motion.div
                     key={index}
-                    onClick={() => setSelectedApp(index)}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
                     whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`px-4 py-2 rounded-full font-medium transition-all ${
-                      selectedApp === index
-                        ? 'bg-[#75ccca] text-white'
-                        : 'bg-[#0e8774] text-white hover:bg-[#75ccca]'
-                    }`}
+                    className="bg-[#0e8774]/20 border border-[#75ccca]/30 rounded-xl p-6 hover:border-[#75ccca]/50 transition-all"
                   >
-                    {app.name}
-                    <span className={`ml-2 w-2 h-2 rounded-full inline-block ${
-                      app.status === 'live' ? 'bg-[#75ccca] animate-pulse' : 'bg-[#0e8774]'
-                    }`} />
-                  </motion.button>
-                ))}
-              </div>
-
-              {/* Selected App Details */}
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={selectedApp}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3 }}
-                  className="bg-[#0e8774]/20 rounded-xl p-6 border border-[#75ccca]/30"
-                >
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <h5 className="text-xl font-bold text-white mb-2">
-                        {featuredProject.apps[selectedApp].name}
-                      </h5>
-                      <p className="text-white mb-4">
-                        {featuredProject.apps[selectedApp].description}
+                    <div className="mb-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <h5 className="text-lg font-bold text-white">{app.name}</h5>
+                        <span className={`w-3 h-3 rounded-full ${
+                          app.status === 'live' ? 'bg-[#75ccca] animate-pulse' : 'bg-[#0e8774]'
+                        }`} />
+                      </div>
+                      <p className="text-white/80 text-sm mb-4">
+                        {app.description}
                       </p>
                     </div>
+                    
                     <motion.a
-                      href={featuredProject.apps[selectedApp].url}
+                      href={app.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="bg-[#75ccca] hover:bg-[#0e8774] text-white px-6 py-3 rounded-full font-medium flex items-center gap-2 transition-colors"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-full bg-gradient-to-r from-[#75ccca] to-[#0e8774] hover:from-[#0e8774] hover:to-[#75ccca] text-white px-4 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all"
                     >
-                      <Eye size={18} />
+                      <Eye size={16} />
                       View Live
-                      <ExternalLink size={16} />
+                      <ExternalLink size={14} />
                     </motion.a>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
+                  </motion.div>
+                ))}
+              </div>
             </div>
 
             {/* Tech Stack */}

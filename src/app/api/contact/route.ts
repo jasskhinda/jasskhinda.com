@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Test Supabase connection first
-    const { data: testData, error: testError } = await supabase
+    const { error: testError } = await supabase
       .from('contact_messages')
       .select('count')
       .limit(1)

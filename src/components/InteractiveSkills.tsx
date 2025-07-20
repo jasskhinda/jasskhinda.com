@@ -23,6 +23,9 @@ const skillCategories = [
     icon: Database,
     color: 'from-[#0e8774] to-[#75ccca]',
     skills: [
+      { name: 'Next.js', level: 90, color: '#000000' },
+      { name: 'React.js', level: 85, color: '#75ccca' },
+      { name: 'Tailwind CSS', level: 90, color: '#0e8774' },
       { name: 'HTML/CSS', level: 95, color: '#75ccca' },
       { name: 'JavaScript', level: 85, color: '#0e8774' },
       { name: 'TypeScript', level: 70, color: '#75ccca' },
@@ -35,6 +38,8 @@ const skillCategories = [
     color: 'from-[#75ccca] to-[#0e8774]',
     skills: [
       { name: 'React Native', level: 75, color: '#75ccca' },
+      { name: 'Firebase', level: 80, color: '#0e8774' },
+      { name: 'Supabase', level: 85, color: '#75ccca' },
       { name: 'Mobile-First Design', level: 85, color: '#0e8774' },
     ]
   },

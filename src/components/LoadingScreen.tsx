@@ -67,7 +67,7 @@ export default function LoadingScreen() {
             </motion.h1>
             
             <motion.div
-              className="w-64 h-1 bg-gray-800 rounded-full overflow-hidden mx-auto"
+              className="w-64 h-1 bg-[#0e8774]/30 rounded-full overflow-hidden mx-auto"
             >
               <motion.div 
                 className="h-full bg-gradient-to-r from-[#75ccca] to-[#0e8774]"
@@ -81,7 +81,7 @@ export default function LoadingScreen() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="text-gray-400 mt-4"
+              className="text-white/70 mt-4"
             >
               {progress.toFixed(0)}%
             </motion.p>

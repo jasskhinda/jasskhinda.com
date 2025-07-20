@@ -22,6 +22,20 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Test Supabase connection first
+    const { data: testData, error: testError } = await supabase
+      .from('contact_messages')
+      .select('count')
+      .limit(1)
+
+    if (testError) {
+      console.error('Supabase connection error:', testError)
+      return NextResponse.json(
+        { error: `Database connection failed: ${testError.message}` },
+        { status: 500 }
+      )
+    }
+
     // Insert into Supabase
     const { data, error } = await supabase
       .from('contact_messages')
@@ -35,9 +49,9 @@ export async function POST(request: NextRequest) {
       .select()
 
     if (error) {
-      console.error('Supabase error:', error)
+      console.error('Supabase insert error:', error)
       return NextResponse.json(
-        { error: 'Failed to send message. Please try again.' },
+        { error: `Failed to save message: ${error.message}` },
         { status: 500 }
       )
     }

@@ -11,11 +11,11 @@ const skillCategories = [
     color: 'from-[#75ccca] to-[#0e8774]',
     skills: [
       { name: 'Next.js', level: 90, color: '#000000' },
-      { name: 'React.js', level: 85, color: '#61dafb' },
-      { name: 'Supabase', level: 85, color: '#3ecf8e' },
-      { name: 'Firebase', level: 80, color: '#ffa000' },
-      { name: 'MongoDB', level: 75, color: '#47a248' },
-      { name: 'Tailwind CSS', level: 90, color: '#06b6d4' },
+      { name: 'React.js', level: 85, color: '#75ccca' },
+      { name: 'Supabase', level: 85, color: '#0e8774' },
+      { name: 'Firebase', level: 80, color: '#75ccca' },
+      { name: 'MongoDB', level: 75, color: '#0e8774' },
+      { name: 'Tailwind CSS', level: 90, color: '#75ccca' },
     ]
   },
   {
@@ -23,10 +23,10 @@ const skillCategories = [
     icon: Database,
     color: 'from-[#0e8774] to-[#75ccca]',
     skills: [
-      { name: 'HTML/CSS', level: 95, color: '#e34c26' },
-      { name: 'JavaScript', level: 85, color: '#f7df1e' },
-      { name: 'TypeScript', level: 70, color: '#3178c6' },
-      { name: 'Bootstrap', level: 80, color: '#7952b3' },
+      { name: 'HTML/CSS', level: 95, color: '#75ccca' },
+      { name: 'JavaScript', level: 85, color: '#0e8774' },
+      { name: 'TypeScript', level: 70, color: '#75ccca' },
+      { name: 'Bootstrap', level: 80, color: '#0e8774' },
     ]
   },
   {
@@ -34,8 +34,8 @@ const skillCategories = [
     icon: Smartphone,
     color: 'from-[#75ccca] to-[#0e8774]',
     skills: [
-      { name: 'React Native', level: 75, color: '#61dafb' },
-      { name: 'Mobile-First Design', level: 85, color: '#10b981' },
+      { name: 'React Native', level: 75, color: '#75ccca' },
+      { name: 'Mobile-First Design', level: 85, color: '#0e8774' },
     ]
   },
   {
@@ -43,9 +43,9 @@ const skillCategories = [
     icon: ShoppingCart,
     color: 'from-[#0e8774] to-[#75ccca]',
     skills: [
-      { name: 'WordPress', level: 95, color: '#21759b' },
-      { name: 'Shopify', level: 85, color: '#7ab55c' },
-      { name: 'WooCommerce', level: 90, color: '#96588a' },
+      { name: 'WordPress', level: 95, color: '#75ccca' },
+      { name: 'Shopify', level: 85, color: '#0e8774' },
+      { name: 'WooCommerce', level: 90, color: '#75ccca' },
     ]
   }
 ]
@@ -55,7 +55,7 @@ export default function InteractiveSkills() {
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null)
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 relative overflow-hidden">
+    <section className="py-20 px-4 bg-gradient-to-br from-[#000000] via-[#0e8774] to-[#000000] relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         {[...Array(30)].map((_, i) => (
@@ -96,7 +96,7 @@ export default function InteractiveSkills() {
           >
             Interactive Skills Galaxy
           </motion.h2>
-          <p className="text-xl text-gray-300">
+          <p className="text-xl text-white">
             Click categories • Hover skills • Watch the magic happen
           </p>
         </motion.div>
@@ -112,7 +112,7 @@ export default function InteractiveSkills() {
               className={`relative p-6 rounded-xl backdrop-blur-sm border-2 transition-all duration-300 ${
                 selectedCategory === index
                   ? 'border-[#75ccca] bg-[#75ccca]/10'
-                  : 'border-gray-600 bg-gray-800/30 hover:border-[#75ccca]/50'
+                  : 'border-[#75ccca]/30 bg-[#0e8774]/20 hover:border-[#75ccca]/50'
               }`}
             >
               <motion.div
@@ -130,12 +130,12 @@ export default function InteractiveSkills() {
                   <category.icon 
                     size={32} 
                     className={`mx-auto mb-3 ${
-                      selectedCategory === index ? 'text-[#75ccca]' : 'text-gray-400'
+                      selectedCategory === index ? 'text-[#75ccca]' : 'text-[#75ccca]'
                     }`} 
                   />
                 </motion.div>
                 <h3 className={`font-bold ${
-                  selectedCategory === index ? 'text-[#75ccca]' : 'text-gray-300'
+                  selectedCategory === index ? 'text-[#75ccca]' : 'text-white'
                 }`}>
                   {category.title}
                 </h3>
@@ -150,7 +150,7 @@ export default function InteractiveSkills() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 border border-gray-700"
+          className="bg-[#0e8774]/20 backdrop-blur-md rounded-2xl p-8 border border-[#75ccca]/30"
         >
           <div className="flex items-center gap-4 mb-8">
             <motion.div
@@ -184,7 +184,7 @@ export default function InteractiveSkills() {
                 onMouseLeave={() => setHoveredSkill(null)}
                 className="group"
               >
-                <div className="bg-gray-700/50 p-6 rounded-xl border border-gray-600 hover:border-[#75ccca]/50 transition-all duration-300">
+                <div className="bg-[#0e8774]/20 p-6 rounded-xl border border-[#75ccca]/30 hover:border-[#75ccca]/50 transition-all duration-300">
                   <div className="flex items-center justify-between mb-4">
                     <h4 className="text-white font-semibold text-lg">{skill.name}</h4>
                     <motion.div
@@ -194,14 +194,14 @@ export default function InteractiveSkills() {
                       <Zap 
                         className="text-[#75ccca]" 
                         size={20}
-                        style={{ filter: hoveredSkill === skill.name ? 'drop-shadow(0 0 8px #fbbf24)' : 'none' }}
+                        style={{ filter: hoveredSkill === skill.name ? 'drop-shadow(0 0 8px #75ccca)' : 'none' }}
                       />
                     </motion.div>
                   </div>
 
                   {/* Progress Bar */}
                   <div className="relative">
-                    <div className="w-full bg-gray-600 rounded-full h-3 mb-2">
+                    <div className="w-full bg-[#0e8774] rounded-full h-3 mb-2">
                       <motion.div
                         className="h-3 rounded-full relative overflow-hidden"
                         style={{ backgroundColor: skill.color }}
@@ -219,11 +219,11 @@ export default function InteractiveSkills() {
                       </motion.div>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Proficiency</span>
+                      <span className="text-[#75ccca]">Proficiency</span>
                       <motion.span 
                         className="font-bold"
                         animate={{ 
-                          color: hoveredSkill === skill.name ? '#ffffff' : '#9ca3af',
+                          color: hoveredSkill === skill.name ? '#ffffff' : '#75ccca',
                           scale: hoveredSkill === skill.name ? 1.1 : 1
                         }}
                       >
@@ -255,7 +255,7 @@ export default function InteractiveSkills() {
             <h3 className="text-2xl font-bold text-white mb-4">
               Continuously Evolving Tech Stack
             </h3>
-            <p className="text-gray-300 max-w-2xl mx-auto">
+            <p className="text-white max-w-2xl mx-auto">
               Always learning, always growing. Currently mastering Full Stack Development with META 
               and expanding database expertise at Loyalist College. The tech world never sleeps, and neither do I!
             </p>

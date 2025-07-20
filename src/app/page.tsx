@@ -17,7 +17,7 @@ export default function Home() {
         <CreativeHero />
         
         {/* About Section */}
-        <section className="py-20 bg-gradient-to-b from-gray-800 to-gray-900">
+        <section className="py-20 bg-gradient-to-b from-[#000000] to-[#0e8774]">
           <About />
         </section>
         
@@ -41,22 +41,22 @@ export default function Home() {
               />
               <button
                 onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-                className="block w-4 h-4 rounded-full bg-gray-600 hover:bg-gradient-to-r hover:from-[#75ccca] hover:to-[#0e8774] hover:scale-125 transition-all duration-300"
+                className="block w-4 h-4 rounded-full bg-[#0e8774] hover:bg-gradient-to-r hover:from-[#75ccca] hover:to-[#0e8774] hover:scale-125 transition-all duration-300"
                 title="About"
               />
               <button
                 onClick={() => window.scrollTo({ top: window.innerHeight * 2, behavior: 'smooth' })}
-                className="block w-4 h-4 rounded-full bg-gray-600 hover:bg-gradient-to-r hover:from-[#75ccca] hover:to-[#0e8774] hover:scale-125 transition-all duration-300"
+                className="block w-4 h-4 rounded-full bg-[#0e8774] hover:bg-gradient-to-r hover:from-[#75ccca] hover:to-[#0e8774] hover:scale-125 transition-all duration-300"
                 title="Skills"
               />
               <button
                 onClick={() => window.scrollTo({ top: window.innerHeight * 3, behavior: 'smooth' })}
-                className="block w-4 h-4 rounded-full bg-gray-600 hover:bg-gradient-to-r hover:from-[#75ccca] hover:to-[#0e8774] hover:scale-125 transition-all duration-300"
+                className="block w-4 h-4 rounded-full bg-[#0e8774] hover:bg-gradient-to-r hover:from-[#75ccca] hover:to-[#0e8774] hover:scale-125 transition-all duration-300"
                 title="Projects"
               />
               <button
                 onClick={() => window.scrollTo({ top: window.innerHeight * 4, behavior: 'smooth' })}
-                className="block w-4 h-4 rounded-full bg-gray-600 hover:bg-gradient-to-r hover:from-[#75ccca] hover:to-[#0e8774] hover:scale-125 transition-all duration-300"
+                className="block w-4 h-4 rounded-full bg-[#0e8774] hover:bg-gradient-to-r hover:from-[#75ccca] hover:to-[#0e8774] hover:scale-125 transition-all duration-300"
                 title="Contact"
               />
             </div>
@@ -65,14 +65,14 @@ export default function Home() {
         
         {/* Achievement Badge - Floating */}
         <div className="fixed bottom-8 left-8 z-50">
-          <div className="bg-gradient-to-r from-yellow-500/90 via-orange-500/90 to-red-500/90 backdrop-blur-md rounded-xl p-4 border border-yellow-500/50 max-w-xs shadow-2xl animate-pulse">
+          <div className="bg-gradient-to-r from-[#75ccca]/90 via-[#0e8774]/90 to-[#75ccca]/90 backdrop-blur-md rounded-xl p-4 border border-[#75ccca]/50 max-w-xs shadow-2xl animate-pulse">
             <div className="text-white text-sm">
               <div className="font-black mb-1 flex items-center gap-2">
                 🏆 LEGENDARY ACHIEVEMENT
                 <span className="text-xs bg-[#75ccca] text-black px-2 py-1 rounded-full font-bold">NEW</span>
               </div>
               <div className="text-xs opacity-90 font-semibold">3 apps delivered in 19 days</div>
-              <div className="text-xs text-yellow-200 mt-1 font-medium">What others couldn&apos;t do in 3 years</div>
+              <div className="text-xs text-[#75ccca] mt-1 font-medium">What others couldn&apos;t do in 3 years</div>
             </div>
           </div>
         </div>

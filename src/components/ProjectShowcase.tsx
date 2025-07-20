@@ -90,13 +90,13 @@ export default function ProjectShowcase() {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null)
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-black via-gray-900 to-gray-800 relative overflow-hidden">
+    <section className="py-20 px-4 bg-gradient-to-br from-[#000000] via-[#0e8774] to-[#000000] relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
         {[...Array(100)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-white/20 rounded-full"
+            className="absolute w-1 h-1 bg-[#75ccca]/20 rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -132,7 +132,7 @@ export default function ProjectShowcase() {
           >
             Project Showcase
           </motion.h2>
-          <p className="text-xl text-gray-300">
+          <p className="text-xl text-white">
             Where impossible becomes possible • Click to explore live apps
           </p>
         </motion.div>
@@ -151,7 +151,7 @@ export default function ProjectShowcase() {
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               className="absolute top-4 right-4"
             >
-              <div className="bg-yellow-500 text-black px-4 py-2 rounded-full font-bold text-sm flex items-center gap-2">
+              <div className="bg-[#75ccca] text-black px-4 py-2 rounded-full font-bold text-sm flex items-center gap-2">
                 <Star size={16} />
                 LEGENDARY
               </div>
@@ -165,7 +165,7 @@ export default function ProjectShowcase() {
               {featuredProject.title}
             </motion.h3>
             <p className="text-xl text-[#75ccca] font-semibold mb-6">{featuredProject.subtitle}</p>
-            <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-4xl">
+            <p className="text-white text-lg leading-relaxed mb-8 max-w-4xl">
               {featuredProject.description}
             </p>
 
@@ -173,11 +173,11 @@ export default function ProjectShowcase() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
               <motion.div
                 whileHover={{ scale: 1.05, rotateY: 10 }}
-                className="bg-green-500/20 border border-green-500/30 rounded-xl p-4 text-center backdrop-blur-sm"
+                className="bg-[#0e8774]/20 border border-[#0e8774]/30 rounded-xl p-4 text-center backdrop-blur-sm"
               >
                 <Clock className="text-[#75ccca] mx-auto mb-2" size={32} />
                 <div className="text-3xl font-bold text-white">{featuredProject.stats.daysToComplete}</div>
-                <div className="text-green-300 text-sm font-medium">Days to Complete</div>
+                <div className="text-[#75ccca] text-sm font-medium">Days to Complete</div>
               </motion.div>
               
               <motion.div
@@ -191,11 +191,11 @@ export default function ProjectShowcase() {
               
               <motion.div
                 whileHover={{ scale: 1.05, rotateY: 10 }}
-                className="bg-red-500/20 border border-red-500/30 rounded-xl p-4 text-center backdrop-blur-sm"
+                className="bg-[#0e8774]/20 border border-[#0e8774]/30 rounded-xl p-4 text-center backdrop-blur-sm"
               >
                 <Users className="text-[#0e8774] mx-auto mb-2" size={32} />
                 <div className="text-3xl font-bold text-white">2</div>
-                <div className="text-red-300 text-sm font-medium">Previous Devs Failed</div>
+                <div className="text-[#75ccca] text-sm font-medium">Previous Devs Failed</div>
               </motion.div>
               
               <motion.div
@@ -224,7 +224,7 @@ export default function ProjectShowcase() {
                     className={`px-4 py-2 rounded-full font-medium transition-all ${
                       selectedApp === index
                         ? 'bg-[#75ccca] text-white'
-                        : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                        : 'bg-[#0e8774] text-white hover:bg-[#75ccca]'
                     }`}
                   >
                     {app.name}
@@ -243,14 +243,14 @@ export default function ProjectShowcase() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-gray-800/50 rounded-xl p-6 border border-gray-700"
+                  className="bg-[#0e8774]/20 rounded-xl p-6 border border-[#75ccca]/30"
                 >
                   <div className="flex items-start justify-between">
                     <div>
                       <h5 className="text-xl font-bold text-white mb-2">
                         {featuredProject.apps[selectedApp].name}
                       </h5>
-                      <p className="text-gray-300 mb-4">
+                      <p className="text-white mb-4">
                         {featuredProject.apps[selectedApp].description}
                       </p>
                     </div>
@@ -294,7 +294,7 @@ export default function ProjectShowcase() {
             </div>
 
             {/* Business Impact */}
-            <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-6">
+            <div className="bg-[#75ccca]/10 border border-[#75ccca]/30 rounded-xl p-6">
               <h4 className="text-xl font-bold text-white mb-4">🚀 Business Impact</h4>
               <div className="grid md:grid-cols-2 gap-4">
                 {featuredProject.impact.map((item, index) => (
@@ -306,7 +306,7 @@ export default function ProjectShowcase() {
                     className="flex items-center gap-3"
                   >
                     <div className="w-2 h-2 bg-[#75ccca] rounded-full" />
-                    <span className="text-gray-300">{item}</span>
+                    <span className="text-white">{item}</span>
                   </motion.div>
                 ))}
               </div>
@@ -332,7 +332,7 @@ export default function ProjectShowcase() {
                 whileHover={{ scale: 1.05, rotateY: 5 }}
                 onMouseEnter={() => setHoveredProject(index)}
                 onMouseLeave={() => setHoveredProject(null)}
-                className="bg-gray-800/50 backdrop-blur-md rounded-xl p-6 border border-gray-700 hover:border-[#75ccca]/50 transition-all duration-300 relative overflow-hidden"
+                className="bg-[#0e8774]/20 backdrop-blur-md rounded-xl p-6 border border-[#75ccca]/30 hover:border-[#75ccca]/50 transition-all duration-300 relative overflow-hidden"
               >
                 {/* Hover Effect */}
                 <motion.div
@@ -354,7 +354,7 @@ export default function ProjectShowcase() {
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.2, rotate: 15 }}
-                        className="text-gray-400 hover:text-[#75ccca] transition-colors"
+                        className="text-[#75ccca] hover:text-[#75ccca] transition-colors"
                       >
                         <ExternalLink size={18} />
                       </motion.a>
@@ -362,13 +362,13 @@ export default function ProjectShowcase() {
                   </div>
 
                   <h4 className="text-xl font-bold text-white mb-3">{project.title}</h4>
-                  <p className="text-gray-300 mb-4">{project.description}</p>
+                  <p className="text-white mb-4">{project.description}</p>
 
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="bg-gray-700 text-gray-300 px-2 py-1 rounded text-xs"
+                        className="bg-[#0e8774] text-white px-2 py-1 rounded text-xs"
                       >
                         {tech}
                       </span>
@@ -377,14 +377,14 @@ export default function ProjectShowcase() {
 
                   <div className="space-y-2">
                     {project.highlights.map((highlight, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm text-gray-400">
+                      <div key={i} className="flex items-center gap-2 text-sm text-[#75ccca]">
                         <div className="w-1 h-1 bg-[#75ccca] rounded-full" />
                         {highlight}
                       </div>
                     ))}
                   </div>
 
-                  <div className="mt-4 pt-4 border-t border-gray-600">
+                  <div className="mt-4 pt-4 border-t border-[#75ccca]/30">
                     <span className="text-[#75ccca] font-medium text-sm">
                       ✅ {project.status}
                     </span>

@@ -17,7 +17,7 @@ export default function CreativeHero() {
   }, [])
 
   return (
-    <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
+    <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#000000] via-[#0e8774] to-[#000000]">
       {/* Animated Background */}
       <div className="absolute inset-0">
         {[...Array(50)].map((_, i) => (
@@ -156,7 +156,7 @@ export default function CreativeHero() {
               <p className="text-xl md:text-2xl text-[#75ccca] font-semibold mb-2">
                 🏆 Completed 3 Healthcare Apps in 19 Days
               </p>
-              <p className="text-gray-300">
+              <p className="text-white">
                 What 2 previous developers couldn&apos;t finish in 3 years
               </p>
             </motion.div>
@@ -211,7 +211,7 @@ export default function CreativeHero() {
             className="flex justify-center space-x-8"
           >
             {[
-              { icon: Github, href: 'https://github.com/jasskhinda', color: 'text-gray-400 hover:text-white' },
+              { icon: Github, href: 'https://github.com/jasskhinda', color: 'text-white hover:text-[#75ccca]' },
               { icon: Linkedin, href: 'https://linkedin.com/in/jasskhinda', color: 'text-[#75ccca] hover:text-[#0e8774]' },
               { icon: Mail, href: 'mailto:info@jasskhinda.com', color: 'text-[#0e8774] hover:text-[#75ccca]' },
             ].map(({ icon: Icon, href, color }, index) => (
@@ -257,7 +257,7 @@ export default function CreativeHero() {
         >
           <ArrowDown size={32} />
         </motion.div>
-        <p className="text-gray-400 text-sm mt-2">Scroll for more magic</p>
+        <p className="text-[#75ccca] text-sm mt-2">Scroll for more magic</p>
       </motion.div>
     </section>
   )

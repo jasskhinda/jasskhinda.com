@@ -52,14 +52,14 @@ function ContactForm() {
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="bg-green-500/10 border border-green-500/30 rounded-lg p-6 text-center"
+        className="bg-[#75ccca]/10 border border-[#75ccca]/30 rounded-lg p-6 text-center"
       >
-        <CheckCircle className="text-green-400 mx-auto mb-4" size={48} />
+        <CheckCircle className="text-[#75ccca] mx-auto mb-4" size={48} />
         <h3 className="text-xl font-semibold text-white mb-2">Message Sent!</h3>
         <p className="text-green-300 mb-4">Thank you for reaching out. I'll get back to you soon!</p>
         <button
           onClick={() => setStatus('idle')}
-          className="text-green-400 hover:text-green-300 underline"
+          className="text-[#75ccca] hover:text-[#0e8774] underline"
         >
           Send another message
         </button>
@@ -80,7 +80,7 @@ function ContactForm() {
           required
           value={formData.name}
           onChange={handleChange}
-          className="w-full bg-gray-700/50 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none transition-colors"
+          className="w-full bg-gray-700/50 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-[#75ccca] focus:outline-none transition-colors"
           placeholder="Enter your full name"
         />
       </div>
@@ -96,7 +96,7 @@ function ContactForm() {
           required
           value={formData.email}
           onChange={handleChange}
-          className="w-full bg-gray-700/50 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none transition-colors"
+          className="w-full bg-gray-700/50 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-[#75ccca] focus:outline-none transition-colors"
           placeholder="your.email@company.com"
         />
       </div>
@@ -133,7 +133,7 @@ function ContactForm() {
         disabled={status === 'loading'}
         whileHover={{ scale: status === 'loading' ? 1 : 1.02 }}
         whileTap={{ scale: 0.98 }}
-        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:from-gray-600 disabled:to-gray-600 text-white px-8 py-4 rounded-lg font-medium transition-all flex items-center justify-center gap-3"
+        className="w-full bg-gradient-to-r from-[#0e8774] to-[#75ccca] hover:from-[#75ccca] hover:to-[#0e8774] disabled:from-gray-600 disabled:to-gray-600 text-white px-8 py-4 rounded-lg font-medium transition-all flex items-center justify-center gap-3"
       >
         {status === 'loading' ? (
           <>
@@ -174,7 +174,7 @@ export default function Contact() {
             <div>
               <h3 className="text-2xl font-bold text-white mb-6">Available for Full-Time Opportunities</h3>
               
-              <div className="bg-gradient-to-r from-blue-600/10 to-purple-600/10 border border-blue-600/20 rounded-lg p-6 mb-6">
+              <div className="bg-gradient-to-r from-[#75ccca]/10 to-[#0e8774]/10 border border-[#75ccca]/20 rounded-lg p-6 mb-6">
                 <p className="text-gray-300 text-lg leading-relaxed">
                   I&apos;m actively seeking a full-time developer position where I can bring the same level of impact I&apos;ve demonstrated at Compassionate Caregivers to your team.
                 </p>
@@ -182,15 +182,15 @@ export default function Contact() {
 
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <Clock className="text-blue-400" size={20} />
+                  <Clock className="text-[#75ccca]" size={20} />
                   <span className="text-gray-300">Available to start immediately</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <MapPin className="text-blue-400" size={20} />
+                  <MapPin className="text-[#75ccca]" size={20} />
                   <span className="text-gray-300">Based in Brampton, Ontario (Open to remote/hybrid)</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Calendar className="text-blue-400" size={20} />
+                  <Calendar className="text-[#75ccca]" size={20} />
                   <span className="text-gray-300">Seeking permanent full-time role (PR pathway)</span>
                 </div>
               </div>
@@ -202,9 +202,9 @@ export default function Contact() {
               <div className="space-y-4">
                 <a
                   href="mailto:info@jasskhinda.com"
-                  className="flex items-center gap-4 bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-blue-600/30 transition-colors group"
+                  className="flex items-center gap-4 bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-[#75ccca]/30 transition-colors group"
                 >
-                  <div className="bg-blue-600 p-3 rounded-full group-hover:bg-blue-700 transition-colors">
+                  <div className="bg-[#75ccca] p-3 rounded-full group-hover:bg-[#0e8774] transition-colors">
                     <Mail className="text-white" size={20} />
                   </div>
                   <div>
@@ -215,9 +215,9 @@ export default function Contact() {
 
                 <a
                   href="tel:6473556441"
-                  className="flex items-center gap-4 bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-blue-600/30 transition-colors group"
+                  className="flex items-center gap-4 bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-[#75ccca]/30 transition-colors group"
                 >
-                  <div className="bg-blue-600 p-3 rounded-full group-hover:bg-blue-700 transition-colors">
+                  <div className="bg-[#75ccca] p-3 rounded-full group-hover:bg-[#0e8774] transition-colors">
                     <Phone className="text-white" size={20} />
                   </div>
                   <div>
@@ -230,9 +230,9 @@ export default function Contact() {
                   href="https://linkedin.com/in/jasskhinda"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-blue-600/30 transition-colors group"
+                  className="flex items-center gap-4 bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-[#75ccca]/30 transition-colors group"
                 >
-                  <div className="bg-blue-600 p-3 rounded-full group-hover:bg-blue-700 transition-colors">
+                  <div className="bg-[#75ccca] p-3 rounded-full group-hover:bg-[#0e8774] transition-colors">
                     <Linkedin className="text-white" size={20} />
                   </div>
                   <div>
@@ -245,9 +245,9 @@ export default function Contact() {
                   href="https://github.com/jasskhinda"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-blue-600/30 transition-colors group"
+                  className="flex items-center gap-4 bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-[#75ccca]/30 transition-colors group"
                 >
-                  <div className="bg-blue-600 p-3 rounded-full group-hover:bg-blue-700 transition-colors">
+                  <div className="bg-[#75ccca] p-3 rounded-full group-hover:bg-[#0e8774] transition-colors">
                     <Github className="text-white" size={20} />
                   </div>
                   <div>
@@ -269,7 +269,7 @@ export default function Contact() {
             
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                <div className="w-2 h-2 bg-[#75ccca] rounded-full mt-2"></div>
                 <div>
                   <h4 className="text-lg font-semibold text-white mb-2">Proven Track Record</h4>
                   <p className="text-gray-300">
@@ -279,7 +279,7 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                <div className="w-2 h-2 bg-[#75ccca] rounded-full mt-2"></div>
                 <div>
                   <h4 className="text-lg font-semibold text-white mb-2">Modern Tech Stack</h4>
                   <p className="text-gray-300">
@@ -289,7 +289,7 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                <div className="w-2 h-2 bg-[#75ccca] rounded-full mt-2"></div>
                 <div>
                   <h4 className="text-lg font-semibold text-white mb-2">Business Impact Focus</h4>
                   <p className="text-gray-300">
@@ -299,7 +299,7 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                <div className="w-2 h-2 bg-[#75ccca] rounded-full mt-2"></div>
                 <div>
                   <h4 className="text-lg font-semibold text-white mb-2">Immediate Availability</h4>
                   <p className="text-gray-300">

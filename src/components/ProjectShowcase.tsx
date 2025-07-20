@@ -123,7 +123,7 @@ export default function ProjectShowcase() {
           className="text-center mb-16"
         >
           <motion.h2
-            className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 mb-6"
+            className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#75ccca] via-[#0e8774] to-[#75ccca] mb-6"
             animate={{
               backgroundPosition: ['0%', '100%', '0%'],
             }}
@@ -144,7 +144,7 @@ export default function ProjectShowcase() {
           transition={{ duration: 0.8 }}
           className="mb-20"
         >
-          <div className="bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-md rounded-3xl p-8 border border-blue-500/30 relative overflow-hidden">
+          <div className="bg-gradient-to-r from-[#75ccca]/10 via-[#0e8774]/10 to-[#75ccca]/10 backdrop-blur-md rounded-3xl p-8 border border-[#75ccca]/30 relative overflow-hidden">
             {/* Floating Badge */}
             <motion.div
               animate={{ rotate: [0, 360] }}
@@ -164,7 +164,7 @@ export default function ProjectShowcase() {
             >
               {featuredProject.title}
             </motion.h3>
-            <p className="text-xl text-blue-400 font-semibold mb-6">{featuredProject.subtitle}</p>
+            <p className="text-xl text-[#75ccca] font-semibold mb-6">{featuredProject.subtitle}</p>
             <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-4xl">
               {featuredProject.description}
             </p>
@@ -175,16 +175,16 @@ export default function ProjectShowcase() {
                 whileHover={{ scale: 1.05, rotateY: 10 }}
                 className="bg-green-500/20 border border-green-500/30 rounded-xl p-4 text-center backdrop-blur-sm"
               >
-                <Clock className="text-green-400 mx-auto mb-2" size={32} />
+                <Clock className="text-[#75ccca] mx-auto mb-2" size={32} />
                 <div className="text-3xl font-bold text-white">{featuredProject.stats.daysToComplete}</div>
                 <div className="text-green-300 text-sm font-medium">Days to Complete</div>
               </motion.div>
               
               <motion.div
                 whileHover={{ scale: 1.05, rotateY: 10 }}
-                className="bg-blue-500/20 border border-blue-500/30 rounded-xl p-4 text-center backdrop-blur-sm"
+                className="bg-[#75ccca]/20 border border-[#75ccca]/30 rounded-xl p-4 text-center backdrop-blur-sm"
               >
-                <Zap className="text-blue-400 mx-auto mb-2" size={32} />
+                <Zap className="text-[#75ccca] mx-auto mb-2" size={32} />
                 <div className="text-3xl font-bold text-white">{featuredProject.stats.appsBuilt}</div>
                 <div className="text-blue-300 text-sm font-medium">Apps Delivered</div>
               </motion.div>
@@ -193,14 +193,14 @@ export default function ProjectShowcase() {
                 whileHover={{ scale: 1.05, rotateY: 10 }}
                 className="bg-red-500/20 border border-red-500/30 rounded-xl p-4 text-center backdrop-blur-sm"
               >
-                <Users className="text-red-400 mx-auto mb-2" size={32} />
+                <Users className="text-[#0e8774] mx-auto mb-2" size={32} />
                 <div className="text-3xl font-bold text-white">2</div>
                 <div className="text-red-300 text-sm font-medium">Previous Devs Failed</div>
               </motion.div>
               
               <motion.div
                 whileHover={{ scale: 1.05, rotateY: 10 }}
-                className="bg-purple-500/20 border border-purple-500/30 rounded-xl p-4 text-center backdrop-blur-sm"
+                className="bg-[#0e8774]/20 border border-[#0e8774]/30 rounded-xl p-4 text-center backdrop-blur-sm"
               >
                 <Star className="text-purple-400 mx-auto mb-2" size={32} />
                 <div className="text-3xl font-bold text-white">100%</div>
@@ -211,7 +211,7 @@ export default function ProjectShowcase() {
             {/* App Selector */}
             <div className="mb-8">
               <h4 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <Rocket className="text-yellow-400" />
+                <Rocket className="text-[#75ccca]" />
                 Live Production Apps
               </h4>
               <div className="flex flex-wrap gap-3 mb-6">
@@ -223,13 +223,13 @@ export default function ProjectShowcase() {
                     whileTap={{ scale: 0.95 }}
                     className={`px-4 py-2 rounded-full font-medium transition-all ${
                       selectedApp === index
-                        ? 'bg-blue-500 text-white'
+                        ? 'bg-[#75ccca] text-white'
                         : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
                     }`}
                   >
                     {app.name}
                     <span className={`ml-2 w-2 h-2 rounded-full inline-block ${
-                      app.status === 'live' ? 'bg-green-400 animate-pulse' : 'bg-yellow-400'
+                      app.status === 'live' ? 'bg-[#75ccca] animate-pulse' : 'bg-[#0e8774]'
                     }`} />
                   </motion.button>
                 ))}
@@ -260,7 +260,7 @@ export default function ProjectShowcase() {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       whileTap={{ scale: 0.9 }}
-                      className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full font-medium flex items-center gap-2 transition-colors"
+                      className="bg-[#75ccca] hover:bg-[#0e8774] text-white px-6 py-3 rounded-full font-medium flex items-center gap-2 transition-colors"
                     >
                       <Eye size={18} />
                       View Live
@@ -274,7 +274,7 @@ export default function ProjectShowcase() {
             {/* Tech Stack */}
             <div className="mb-8">
               <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Code2 className="text-green-400" />
+                <Code2 className="text-[#75ccca]" />
                 Technology Stack
               </h4>
               <div className="flex flex-wrap gap-3">
@@ -285,7 +285,7 @@ export default function ProjectShowcase() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.1 }}
                     whileHover={{ scale: 1.1, y: -2 }}
-                    className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30"
+                    className="bg-gradient-to-r from-[#75ccca]/20 to-[#0e8774]/20 text-[#75ccca] px-4 py-2 rounded-full text-sm font-medium border border-[#75ccca]/30"
                   >
                     {tech}
                   </motion.span>
@@ -305,7 +305,7 @@ export default function ProjectShowcase() {
                     transition={{ delay: index * 0.1 }}
                     className="flex items-center gap-3"
                   >
-                    <div className="w-2 h-2 bg-green-400 rounded-full" />
+                    <div className="w-2 h-2 bg-[#75ccca] rounded-full" />
                     <span className="text-gray-300">{item}</span>
                   </motion.div>
                 ))}
@@ -332,11 +332,11 @@ export default function ProjectShowcase() {
                 whileHover={{ scale: 1.05, rotateY: 5 }}
                 onMouseEnter={() => setHoveredProject(index)}
                 onMouseLeave={() => setHoveredProject(null)}
-                className="bg-gray-800/50 backdrop-blur-md rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 relative overflow-hidden"
+                className="bg-gray-800/50 backdrop-blur-md rounded-xl p-6 border border-gray-700 hover:border-[#75ccca]/50 transition-all duration-300 relative overflow-hidden"
               >
                 {/* Hover Effect */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10"
+                  className="absolute inset-0 bg-gradient-to-r from-[#75ccca]/10 to-[#0e8774]/10"
                   animate={{
                     opacity: hoveredProject === index ? 1 : 0,
                   }}
@@ -345,7 +345,7 @@ export default function ProjectShowcase() {
 
                 <div className="relative z-10">
                   <div className="flex items-start justify-between mb-4">
-                    <span className="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs font-medium">
+                    <span className="bg-[#75ccca]/20 text-[#75ccca] px-3 py-1 rounded-full text-xs font-medium">
                       {project.type}
                     </span>
                     {project.url && (
@@ -354,7 +354,7 @@ export default function ProjectShowcase() {
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.2, rotate: 15 }}
-                        className="text-gray-400 hover:text-blue-400 transition-colors"
+                        className="text-gray-400 hover:text-[#75ccca] transition-colors"
                       >
                         <ExternalLink size={18} />
                       </motion.a>
@@ -378,14 +378,14 @@ export default function ProjectShowcase() {
                   <div className="space-y-2">
                     {project.highlights.map((highlight, i) => (
                       <div key={i} className="flex items-center gap-2 text-sm text-gray-400">
-                        <div className="w-1 h-1 bg-blue-400 rounded-full" />
+                        <div className="w-1 h-1 bg-[#75ccca] rounded-full" />
                         {highlight}
                       </div>
                     ))}
                   </div>
 
                   <div className="mt-4 pt-4 border-t border-gray-600">
-                    <span className="text-green-400 font-medium text-sm">
+                    <span className="text-[#75ccca] font-medium text-sm">
                       ✅ {project.status}
                     </span>
                   </div>

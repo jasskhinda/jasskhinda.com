@@ -2,10 +2,10 @@
 
 import { ThemeProvider } from '@/components/ThemeProvider'
 import LoadingScreen from '@/components/LoadingScreen'
-import FallbackHero from '@/components/FallbackHero'
+import CreativeHero from '@/components/CreativeHero'
 import About from '@/components/About'
-import Resume from '@/components/Resume'
-import Works from '@/components/Works'
+import InteractiveSkills from '@/components/InteractiveSkills'
+import ProjectShowcase from '@/components/ProjectShowcase'
 import Contact from '@/components/Contact'
 
 export default function Home() {
@@ -13,19 +13,19 @@ export default function Home() {
     <ThemeProvider attribute="class" defaultTheme="dark">
       <LoadingScreen />
       <main className="relative">
-        {/* Hero Section */}
-        <FallbackHero />
+        {/* Creative Hero Section */}
+        <CreativeHero />
         
-        {/* Traditional About Section */}
-        <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+        {/* About Section */}
+        <section className="py-20 bg-gradient-to-b from-purple-900 to-gray-900">
           <About />
         </section>
         
-        {/* Resume Section */}
-        <Resume />
+        {/* Interactive Skills Galaxy */}
+        <InteractiveSkills />
         
-        {/* Works Section */}
-        <Works />
+        {/* Project Showcase */}
+        <ProjectShowcase />
         
         {/* Contact Section */}
         <Contact />
@@ -36,50 +36,61 @@ export default function Home() {
             <div className="space-y-4">
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="block w-3 h-3 rounded-full bg-blue-600 hover:bg-blue-500 transition-colors"
+                className="block w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 hover:scale-125 transition-all duration-300 shadow-lg"
                 title="Hero"
               />
               <button
                 onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-                className="block w-3 h-3 rounded-full bg-gray-600 hover:bg-blue-500 transition-colors"
+                className="block w-4 h-4 rounded-full bg-gray-600 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:scale-125 transition-all duration-300"
                 title="About"
               />
               <button
                 onClick={() => window.scrollTo({ top: window.innerHeight * 2, behavior: 'smooth' })}
-                className="block w-3 h-3 rounded-full bg-gray-600 hover:bg-blue-500 transition-colors"
-                title="Resume"
+                className="block w-4 h-4 rounded-full bg-gray-600 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:scale-125 transition-all duration-300"
+                title="Skills"
               />
               <button
                 onClick={() => window.scrollTo({ top: window.innerHeight * 3, behavior: 'smooth' })}
-                className="block w-3 h-3 rounded-full bg-gray-600 hover:bg-blue-500 transition-colors"
-                title="Works"
+                className="block w-4 h-4 rounded-full bg-gray-600 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:scale-125 transition-all duration-300"
+                title="Projects"
               />
               <button
                 onClick={() => window.scrollTo({ top: window.innerHeight * 4, behavior: 'smooth' })}
-                className="block w-3 h-3 rounded-full bg-gray-600 hover:bg-blue-500 transition-colors"
+                className="block w-4 h-4 rounded-full bg-gray-600 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 hover:scale-125 transition-all duration-300"
                 title="Contact"
               />
             </div>
           </div>
         </nav>
         
-        {/* Achievement Badge */}
+        {/* Achievement Badge - Floating */}
         <div className="fixed bottom-8 left-8 z-50">
-          <div className="bg-gradient-to-r from-green-600/90 to-blue-600/90 backdrop-blur-md rounded-lg p-4 border border-green-600/30 max-w-xs">
+          <div className="bg-gradient-to-r from-yellow-500/90 via-orange-500/90 to-red-500/90 backdrop-blur-md rounded-xl p-4 border border-yellow-500/50 max-w-xs shadow-2xl animate-pulse">
             <div className="text-white text-sm">
-              <div className="font-bold mb-1">🏆 Achievement Unlocked</div>
-              <div className="text-xs opacity-90">3 apps delivered in 19 days</div>
-              <div className="text-xs text-green-300 mt-1">Where others failed for 3 years</div>
+              <div className="font-black mb-1 flex items-center gap-2">
+                🏆 LEGENDARY ACHIEVEMENT
+                <span className="text-xs bg-yellow-400 text-black px-2 py-1 rounded-full font-bold">NEW</span>
+              </div>
+              <div className="text-xs opacity-90 font-semibold">3 apps delivered in 19 days</div>
+              <div className="text-xs text-yellow-200 mt-1 font-medium">What others couldn't do in 3 years</div>
             </div>
           </div>
         </div>
         
-        {/* Availability Status */}
+        {/* Status Indicator - Animated */}
         <div className="fixed top-8 left-8 z-50">
-          <div className="bg-black/50 backdrop-blur-md rounded-full px-4 py-2 border border-green-600/30 flex items-center gap-2">
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span className="text-white text-sm font-medium">Available for Hire</span>
+          <div className="bg-gradient-to-r from-green-500/90 to-blue-500/90 backdrop-blur-md rounded-full px-6 py-3 border border-green-500/50 flex items-center gap-3 shadow-xl">
+            <div className="relative">
+              <div className="w-3 h-3 bg-green-400 rounded-full animate-ping absolute"></div>
+              <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+            </div>
+            <span className="text-white font-bold text-sm">🚀 AVAILABLE FOR HIRE</span>
           </div>
+        </div>
+
+        {/* Cursor Follow Effect */}
+        <div className="fixed inset-0 pointer-events-none z-0">
+          <div className="absolute inset-0 bg-gradient-radial from-blue-500/5 via-transparent to-transparent"></div>
         </div>
       </main>
     </ThemeProvider>

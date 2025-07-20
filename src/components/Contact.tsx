@@ -1,7 +1,155 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Calendar, Linkedin, Github, Clock } from 'lucide-react'
+import { useState } from 'react'
+import { Mail, Phone, MapPin, Calendar, Linkedin, Github, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react'
+
+function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  })
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setStatus('loading')
+    setErrorMessage('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      })
+
+      const result = await response.json()
+
+      if (response.ok) {
+        setStatus('success')
+        setFormData({ name: '', email: '', message: '' })
+      } else {
+        setStatus('error')
+        setErrorMessage(result.error || 'Failed to send message')
+      }
+    } catch (error) {
+      setStatus('error')
+      setErrorMessage('Network error. Please try again.')
+    }
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }))
+  }
+
+  if (status === 'success') {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="bg-green-500/10 border border-green-500/30 rounded-lg p-6 text-center"
+      >
+        <CheckCircle className="text-green-400 mx-auto mb-4" size={48} />
+        <h3 className="text-xl font-semibold text-white mb-2">Message Sent!</h3>
+        <p className="text-green-300 mb-4">Thank you for reaching out. I'll get back to you soon!</p>
+        <button
+          onClick={() => setStatus('idle')}
+          className="text-green-400 hover:text-green-300 underline"
+        >
+          Send another message
+        </button>
+      </motion.div>
+    )
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <div>
+        <label htmlFor="name" className="block text-gray-300 mb-2 font-medium">
+          Your Name *
+        </label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          value={formData.name}
+          onChange={handleChange}
+          className="w-full bg-gray-700/50 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none transition-colors"
+          placeholder="Enter your full name"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="email" className="block text-gray-300 mb-2 font-medium">
+          Email Address *
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          value={formData.email}
+          onChange={handleChange}
+          className="w-full bg-gray-700/50 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none transition-colors"
+          placeholder="your.email@company.com"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="message" className="block text-gray-300 mb-2 font-medium">
+          Message *
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          rows={5}
+          value={formData.message}
+          onChange={handleChange}
+          className="w-full bg-gray-700/50 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none transition-colors resize-none"
+          placeholder="Tell me about the opportunity, your project, or what you'd like to discuss..."
+        />
+      </div>
+
+      {status === 'error' && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-red-500/10 border border-red-500/30 rounded-lg p-4 flex items-center gap-3"
+        >
+          <AlertCircle className="text-red-400" size={20} />
+          <p className="text-red-300">{errorMessage}</p>
+        </motion.div>
+      )}
+
+      <motion.button
+        type="submit"
+        disabled={status === 'loading'}
+        whileHover={{ scale: status === 'loading' ? 1 : 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:from-gray-600 disabled:to-gray-600 text-white px-8 py-4 rounded-lg font-medium transition-all flex items-center justify-center gap-3"
+      >
+        {status === 'loading' ? (
+          <>
+            <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+            Sending...
+          </>
+        ) : (
+          <>
+            <Send size={20} />
+            Send Message
+          </>
+        )}
+      </motion.button>
+    </form>
+  )
+}
 
 export default function Contact() {
   return (
@@ -161,16 +309,10 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="mt-8 bg-gradient-to-r from-blue-600/10 to-purple-600/10 border border-blue-600/20 rounded-lg p-6">
-              <p className="text-gray-300 text-center mb-4">
-                Let&apos;s discuss how I can bring this same level of excellence to your team.
-              </p>
-              <a
-                href="mailto:info@jasskhinda.com"
-                className="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center px-8 py-3 rounded-full font-medium transition-all transform hover:scale-105"
-              >
-                Schedule a Conversation
-              </a>
+            {/* Contact Form */}
+            <div className="mt-8">
+              <h4 className="text-xl font-semibold text-white mb-6">Send a Message</h4>
+              <ContactForm />
             </div>
           </motion.div>
         </div>

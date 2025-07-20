@@ -34,7 +34,7 @@ function ContactForm() {
         setStatus('error')
         setErrorMessage(result.error || 'Failed to send message')
       }
-    } catch {"}
+    } catch {
       setStatus('error')
       setErrorMessage('Network error. Please try again.')
     }

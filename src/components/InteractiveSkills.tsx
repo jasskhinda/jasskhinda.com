@@ -55,7 +55,7 @@ export default function InteractiveSkills() {
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null)
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 relative overflow-hidden">
+    <section className="py-20 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         {[...Array(30)].map((_, i) => (

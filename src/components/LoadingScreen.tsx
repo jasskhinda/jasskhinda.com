@@ -42,17 +42,17 @@ export default function LoadingScreen() {
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0 border-4 border-blue-600 border-t-transparent rounded-full"
+                  className="absolute inset-0 border-4 border-[#75ccca] border-t-transparent rounded-full"
                 />
                 <motion.div
                   animate={{ rotate: -360 }}
                   transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-2 border-4 border-purple-600 border-t-transparent rounded-full"
+                  className="absolute inset-2 border-4 border-[#0e8774] border-t-transparent rounded-full"
                 />
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-4 border-4 border-blue-400 border-t-transparent rounded-full"
+                  className="absolute inset-4 border-4 border-[#75ccca] border-t-transparent rounded-full"
                 />
               </div>
             </motion.div>
@@ -70,7 +70,7 @@ export default function LoadingScreen() {
               className="w-64 h-1 bg-gray-800 rounded-full overflow-hidden mx-auto"
             >
               <motion.div 
-                className="h-full bg-gradient-to-r from-blue-600 to-purple-600"
+                className="h-full bg-gradient-to-r from-[#75ccca] to-[#0e8774]"
                 initial={{ width: "0%" }}
                 animate={{ width: `${progress}%` }}
                 transition={{ duration: 0.2 }}

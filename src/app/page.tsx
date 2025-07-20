@@ -17,7 +17,7 @@ export default function Home() {
         <CreativeHero />
         
         {/* About Section */}
-        <section className="py-20 bg-gradient-to-b from-purple-900 to-gray-900">
+        <section className="py-20 bg-gradient-to-b from-gray-800 to-gray-900">
           <About />
         </section>
         

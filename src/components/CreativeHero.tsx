@@ -17,7 +17,7 @@ export default function CreativeHero() {
   }, [])
 
   return (
-    <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900">
+    <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
       {/* Animated Background */}
       <div className="absolute inset-0">
         {[...Array(50)].map((_, i) => (

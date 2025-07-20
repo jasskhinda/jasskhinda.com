@@ -90,7 +90,7 @@ export default function ProjectShowcase() {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null)
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-black via-gray-900 to-purple-900 relative overflow-hidden">
+    <section className="py-20 px-4 bg-gradient-to-br from-black via-gray-900 to-gray-800 relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
         {[...Array(100)].map((_, i) => (
@@ -186,7 +186,7 @@ export default function ProjectShowcase() {
               >
                 <Zap className="text-[#75ccca] mx-auto mb-2" size={32} />
                 <div className="text-3xl font-bold text-white">{featuredProject.stats.appsBuilt}</div>
-                <div className="text-blue-300 text-sm font-medium">Apps Delivered</div>
+                <div className="text-[#75ccca] text-sm font-medium">Apps Delivered</div>
               </motion.div>
               
               <motion.div
@@ -202,9 +202,9 @@ export default function ProjectShowcase() {
                 whileHover={{ scale: 1.05, rotateY: 10 }}
                 className="bg-[#0e8774]/20 border border-[#0e8774]/30 rounded-xl p-4 text-center backdrop-blur-sm"
               >
-                <Star className="text-purple-400 mx-auto mb-2" size={32} />
+                <Star className="text-[#0e8774] mx-auto mb-2" size={32} />
                 <div className="text-3xl font-bold text-white">100%</div>
-                <div className="text-purple-300 text-sm font-medium">Success Rate</div>
+                <div className="text-[#75ccca] text-sm font-medium">Success Rate</div>
               </motion.div>
             </div>
 

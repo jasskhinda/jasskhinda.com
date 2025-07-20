@@ -34,7 +34,7 @@ function ContactForm() {
         setStatus('error')
         setErrorMessage(result.error || 'Failed to send message')
       }
-    } catch (error) {
+    } catch {"}
       setStatus('error')
       setErrorMessage('Network error. Please try again.')
     }
@@ -56,7 +56,7 @@ function ContactForm() {
       >
         <CheckCircle className="text-[#75ccca] mx-auto mb-4" size={48} />
         <h3 className="text-xl font-semibold text-white mb-2">Message Sent!</h3>
-        <p className="text-green-300 mb-4">Thank you for reaching out. I'll get back to you soon!</p>
+        <p className="text-green-300 mb-4">Thank you for reaching out. I&apos;ll get back to you soon!</p>
         <button
           onClick={() => setStatus('idle')}
           className="text-[#75ccca] hover:text-[#0e8774] underline"

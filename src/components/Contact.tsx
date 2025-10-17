@@ -52,14 +52,14 @@ function ContactForm() {
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="bg-[#75ccca]/10 border border-[#75ccca]/30 rounded-lg p-6 text-center"
+        className="bg-blue-500/10 border border-blue-400/30 rounded-lg p-6 text-center"
       >
-        <CheckCircle className="text-[#75ccca] mx-auto mb-4" size={48} />
+        <CheckCircle className="text-blue-400 mx-auto mb-4" size={48} />
         <h3 className="text-xl font-semibold text-white mb-2">Message Sent!</h3>
         <p className="text-white mb-4">Thank you for reaching out. I&apos;ll get back to you soon!</p>
         <button
           onClick={() => setStatus('idle')}
-          className="text-[#75ccca] hover:text-[#0e8774] underline"
+          className="text-blue-400 hover:text-indigo-600 underline"
         >
           Send another message
         </button>
@@ -80,7 +80,7 @@ function ContactForm() {
           required
           value={formData.name}
           onChange={handleChange}
-          className="w-full bg-[#0e8774]/20 border border-[#75ccca]/30 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-[#75ccca] focus:outline-none transition-colors"
+          className="w-full bg-indigo-600/20 border border-blue-400/30 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-blue-400 focus:outline-none transition-colors"
           placeholder="Enter your full name"
         />
       </div>
@@ -96,7 +96,7 @@ function ContactForm() {
           required
           value={formData.email}
           onChange={handleChange}
-          className="w-full bg-[#0e8774]/20 border border-[#75ccca]/30 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-[#75ccca] focus:outline-none transition-colors"
+          className="w-full bg-indigo-600/20 border border-blue-400/30 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-blue-400 focus:outline-none transition-colors"
           placeholder="your.email@company.com"
         />
       </div>
@@ -112,7 +112,7 @@ function ContactForm() {
           rows={5}
           value={formData.message}
           onChange={handleChange}
-          className="w-full bg-[#0e8774]/20 border border-[#75ccca]/30 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-[#75ccca] focus:outline-none transition-colors resize-none"
+          className="w-full bg-indigo-600/20 border border-blue-400/30 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-blue-400 focus:outline-none transition-colors resize-none"
           placeholder="Tell me about the opportunity, your project, or what you'd like to discuss..."
         />
       </div>
@@ -121,9 +121,9 @@ function ContactForm() {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-[#0e8774]/10 border border-[#0e8774]/30 rounded-lg p-4 flex items-center gap-3"
+          className="bg-indigo-600/10 border border-indigo-500/30 rounded-lg p-4 flex items-center gap-3"
         >
-          <AlertCircle className="text-[#75ccca]" size={20} />
+          <AlertCircle className="text-blue-400" size={20} />
           <p className="text-white">{errorMessage}</p>
         </motion.div>
       )}
@@ -133,7 +133,7 @@ function ContactForm() {
         disabled={status === 'loading'}
         whileHover={{ scale: status === 'loading' ? 1 : 1.02 }}
         whileTap={{ scale: 0.98 }}
-        className="w-full bg-gradient-to-r from-[#0e8774] to-[#75ccca] hover:from-[#75ccca] hover:to-[#0e8774] disabled:from-[#0e8774]/50 disabled:to-[#75ccca]/50 text-white px-8 py-4 rounded-lg font-medium transition-all flex items-center justify-center gap-3"
+        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-indigo-600 disabled:from-blue-600/50 disabled:to-purple-600/50 text-white px-8 py-4 rounded-lg font-medium transition-all flex items-center justify-center gap-3"
       >
         {status === 'loading' ? (
           <>
@@ -153,7 +153,7 @@ function ContactForm() {
 
 export default function Contact() {
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-[#000000] via-[#0e8774] to-[#000000]" id="contact">
+    <section className="py-20 px-4 bg-gradient-to-br from-[#000000] via-indigo-900 to-[#000000]" id="contact">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -174,7 +174,7 @@ export default function Contact() {
             <div>
               <h3 className="text-2xl font-bold text-white mb-6">Available for Full-Time Opportunities</h3>
               
-              <div className="bg-gradient-to-r from-[#75ccca]/10 to-[#0e8774]/10 border border-[#75ccca]/30 rounded-lg p-6 mb-6">
+              <div className="bg-gradient-to-r from-blue-500/10 to-indigo-600/10 border border-blue-400/30 rounded-lg p-6 mb-6">
                 <p className="text-white text-lg leading-relaxed">
                   I&apos;m actively seeking a full-time developer position where I can bring the same level of impact I&apos;ve demonstrated at Compassionate Caregivers to your team.
                 </p>
@@ -182,15 +182,15 @@ export default function Contact() {
 
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <Clock className="text-[#75ccca]" size={20} />
+                  <Clock className="text-blue-400" size={20} />
                   <span className="text-white">Available to start immediately</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <MapPin className="text-[#75ccca]" size={20} />
+                  <MapPin className="text-blue-400" size={20} />
                   <span className="text-white">Based in Brampton, Ontario (Open to remote/hybrid)</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Calendar className="text-[#75ccca]" size={20} />
+                  <Calendar className="text-blue-400" size={20} />
                   <span className="text-white">Seeking permanent full-time role (PR pathway)</span>
                 </div>
               </div>
@@ -202,9 +202,9 @@ export default function Contact() {
               <div className="space-y-4">
                 <a
                   href="mailto:info@jasskhinda.com"
-                  className="flex items-center gap-4 bg-[#0e8774]/20 border border-[#75ccca]/30 rounded-lg p-4 hover:border-[#75ccca]/50 transition-colors group"
+                  className="flex items-center gap-4 bg-indigo-600/20 border border-blue-400/30 rounded-lg p-4 hover:border-blue-400/50 transition-colors group"
                 >
-                  <div className="bg-[#75ccca] p-3 rounded-full group-hover:bg-[#0e8774] transition-colors">
+                  <div className="bg-blue-500 p-3 rounded-full group-hover:bg-indigo-600 transition-colors">
                     <Mail className="text-white" size={20} />
                   </div>
                   <div>
@@ -215,9 +215,9 @@ export default function Contact() {
 
                 <a
                   href="tel:6473556441"
-                  className="flex items-center gap-4 bg-[#0e8774]/20 border border-[#75ccca]/30 rounded-lg p-4 hover:border-[#75ccca]/50 transition-colors group"
+                  className="flex items-center gap-4 bg-indigo-600/20 border border-blue-400/30 rounded-lg p-4 hover:border-blue-400/50 transition-colors group"
                 >
-                  <div className="bg-[#75ccca] p-3 rounded-full group-hover:bg-[#0e8774] transition-colors">
+                  <div className="bg-blue-500 p-3 rounded-full group-hover:bg-indigo-600 transition-colors">
                     <Phone className="text-white" size={20} />
                   </div>
                   <div>
@@ -230,9 +230,9 @@ export default function Contact() {
                   href="https://linkedin.com/in/jasskhinda"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 bg-[#0e8774]/20 border border-[#75ccca]/30 rounded-lg p-4 hover:border-[#75ccca]/50 transition-colors group"
+                  className="flex items-center gap-4 bg-indigo-600/20 border border-blue-400/30 rounded-lg p-4 hover:border-blue-400/50 transition-colors group"
                 >
-                  <div className="bg-[#75ccca] p-3 rounded-full group-hover:bg-[#0e8774] transition-colors">
+                  <div className="bg-blue-500 p-3 rounded-full group-hover:bg-indigo-600 transition-colors">
                     <Linkedin className="text-white" size={20} />
                   </div>
                   <div>
@@ -245,9 +245,9 @@ export default function Contact() {
                   href="https://github.com/jasskhinda"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 bg-[#0e8774]/20 border border-[#75ccca]/30 rounded-lg p-4 hover:border-[#75ccca]/50 transition-colors group"
+                  className="flex items-center gap-4 bg-indigo-600/20 border border-blue-400/30 rounded-lg p-4 hover:border-blue-400/50 transition-colors group"
                 >
-                  <div className="bg-[#75ccca] p-3 rounded-full group-hover:bg-[#0e8774] transition-colors">
+                  <div className="bg-blue-500 p-3 rounded-full group-hover:bg-indigo-600 transition-colors">
                     <Github className="text-white" size={20} />
                   </div>
                   <div>
@@ -263,13 +263,13 @@ export default function Contact() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="bg-[#0e8774]/20 border border-[#75ccca]/30 rounded-lg p-8"
+            className="bg-indigo-600/20 border border-blue-400/30 rounded-lg p-8"
           >
             <h3 className="text-2xl font-bold text-white mb-6">Why Hire Me?</h3>
-            
+
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="w-2 h-2 bg-[#75ccca] rounded-full mt-2"></div>
+                <div className="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
                 <div>
                   <h4 className="text-lg font-semibold text-white mb-2">Proven Track Record</h4>
                   <p className="text-white">
@@ -279,7 +279,7 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-2 h-2 bg-[#75ccca] rounded-full mt-2"></div>
+                <div className="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
                 <div>
                   <h4 className="text-lg font-semibold text-white mb-2">Modern Tech Stack</h4>
                   <p className="text-white">
@@ -289,7 +289,7 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-2 h-2 bg-[#75ccca] rounded-full mt-2"></div>
+                <div className="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
                 <div>
                   <h4 className="text-lg font-semibold text-white mb-2">Business Impact Focus</h4>
                   <p className="text-white">
@@ -299,7 +299,7 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-2 h-2 bg-[#75ccca] rounded-full mt-2"></div>
+                <div className="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
                 <div>
                   <h4 className="text-lg font-semibold text-white mb-2">Immediate Availability</h4>
                   <p className="text-white">
@@ -321,7 +321,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mt-16 pt-8 border-t border-[#75ccca]/30"
+          className="text-center mt-16 pt-8 border-t border-blue-400/30"
         >
           <p className="text-white/70">
             © 2025 Jaspal Singh (Jass Khinda). Portfolio

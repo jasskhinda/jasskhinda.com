@@ -17,13 +17,13 @@ export default function CreativeHero() {
   }, [])
 
   return (
-    <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#000000] via-[#0e8774] to-[#000000]">
+    <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#000000] via-indigo-900 to-[#000000]">
       {/* Animated Background */}
       <div className="absolute inset-0">
         {[...Array(50)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-[#75ccca] rounded-full"
+            className="absolute w-1 h-1 bg-blue-400 rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -46,7 +46,7 @@ export default function CreativeHero() {
       <motion.div
         className="fixed w-96 h-96 pointer-events-none z-10"
         style={{
-          background: 'radial-gradient(circle, rgba(117, 204, 202, 0.1) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%)',
         }}
         animate={{
           x: mousePosition.x - 192,
@@ -64,9 +64,9 @@ export default function CreativeHero() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center bg-[#0e8774]/20 border border-[#0e8774]/30 rounded-full px-6 py-3 text-[#75ccca] mb-8 backdrop-blur-sm"
+            className="inline-flex items-center bg-indigo-600/20 border border-blue-500/30 rounded-full px-6 py-3 text-blue-400 mb-8 backdrop-blur-sm"
           >
-            <div className="w-3 h-3 bg-[#75ccca] rounded-full animate-pulse mr-3"></div>
+            <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse mr-3"></div>
             <span className="font-medium">🚀 Available for Full-Time • Ready to Deliver</span>
           </motion.div>
 
@@ -79,15 +79,15 @@ export default function CreativeHero() {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            <motion.h1 
-              className="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#75ccca] via-[#0e8774] to-[#75ccca] mb-4"
+            <motion.h1
+              className="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-600 to-indigo-600 mb-4"
               animate={{
                 backgroundPosition: isHovered ? ['0%', '100%'] : ['0%', '50%'],
               }}
               transition={{ duration: 2, repeat: Infinity }}
               style={{
                 backgroundSize: '200% 200%',
-                textShadow: '0 0 30px rgba(117, 204, 202, 0.5)',
+                textShadow: '0 0 30px rgba(96, 165, 250, 0.5)',
               }}
             >
               JASS KHINDA
@@ -106,14 +106,14 @@ export default function CreativeHero() {
                 animate={{ rotate: 360 }}
                 transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
               >
-                <Code className="text-[#75ccca]" size={40} />
+                <Code className="text-blue-400" size={40} />
               </motion.div>
               <span>Full-Stack Developer</span>
               <motion.div
                 animate={{ rotate: -360 }}
                 transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
               >
-                <Rocket className="text-[#0e8774]" size={40} />
+                <Rocket className="text-indigo-600" size={40} />
               </motion.div>
             </div>
           </motion.div>
@@ -126,12 +126,12 @@ export default function CreativeHero() {
             className="relative mb-12"
           >
             <motion.div
-              className="relative bg-gradient-to-r from-[#75ccca]/20 via-[#0e8774]/20 to-[#75ccca]/20 border border-[#75ccca]/30 rounded-2xl p-8 backdrop-blur-sm"
+              className="relative bg-gradient-to-r from-blue-500/20 via-purple-600/20 to-indigo-600/20 border border-blue-400/30 rounded-2xl p-8 backdrop-blur-sm"
               animate={{
                 boxShadow: [
-                  '0 0 20px rgba(117, 204, 202, 0.3)',
-                  '0 0 40px rgba(117, 204, 202, 0.6)',
-                  '0 0 20px rgba(117, 204, 202, 0.3)',
+                  '0 0 20px rgba(96, 165, 250, 0.3)',
+                  '0 0 40px rgba(96, 165, 250, 0.6)',
+                  '0 0 20px rgba(96, 165, 250, 0.3)',
                 ],
               }}
               transition={{ duration: 2, repeat: Infinity }}
@@ -141,7 +141,7 @@ export default function CreativeHero() {
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 1, repeat: Infinity }}
                 >
-                  <Zap className="text-[#75ccca]" size={32} />
+                  <Zap className="text-blue-400" size={32} />
                 </motion.div>
                 <h2 className="text-2xl md:text-3xl font-bold text-white">
                   FULL-STACK EXCELLENCE
@@ -150,10 +150,10 @@ export default function CreativeHero() {
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 1, repeat: Infinity, delay: 0.5 }}
                 >
-                  <Zap className="text-[#75ccca]" size={32} />
+                  <Zap className="text-blue-400" size={32} />
                 </motion.div>
               </div>
-              <p className="text-xl md:text-2xl text-[#75ccca] font-semibold mb-2">
+              <p className="text-xl md:text-2xl text-blue-400 font-semibold mb-2">
                 🏆 Enterprise Healthcare Platform Development
               </p>
               <p className="text-white">
@@ -173,10 +173,10 @@ export default function CreativeHero() {
               href="#works"
               whileHover={{ scale: 1.05, rotateX: 10 }}
               whileTap={{ scale: 0.95 }}
-              className="group relative bg-gradient-to-r from-[#0e8774] to-[#75ccca] text-white px-10 py-4 rounded-full font-bold text-lg overflow-hidden"
+              className="group relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-4 rounded-full font-bold text-lg overflow-hidden"
             >
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-[#75ccca] to-[#0e8774]"
+                className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600"
                 initial={{ x: '-100%' }}
                 whileHover={{ x: 0 }}
                 transition={{ duration: 0.3 }}
@@ -191,10 +191,10 @@ export default function CreativeHero() {
               href="#contact"
               whileHover={{ scale: 1.05, rotateX: -10 }}
               whileTap={{ scale: 0.95 }}
-              className="group relative border-2 border-[#75ccca] text-[#75ccca] hover:text-white px-10 py-4 rounded-full font-bold text-lg overflow-hidden"
+              className="group relative border-2 border-blue-400 text-blue-400 hover:text-white px-10 py-4 rounded-full font-bold text-lg overflow-hidden"
             >
               <motion.div
-                className="absolute inset-0 bg-[#75ccca]"
+                className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-600"
                 initial={{ x: '-100%' }}
                 whileHover={{ x: 0 }}
                 transition={{ duration: 0.3 }}
@@ -211,9 +211,9 @@ export default function CreativeHero() {
             className="flex justify-center space-x-8"
           >
             {[
-              { icon: Github, href: 'https://github.com/jasskhinda', color: 'text-white hover:text-[#75ccca]' },
-              { icon: Linkedin, href: 'https://linkedin.com/in/jasskhinda', color: 'text-[#75ccca] hover:text-[#0e8774]' },
-              { icon: Mail, href: 'mailto:info@jasskhinda.com', color: 'text-[#0e8774] hover:text-[#75ccca]' },
+              { icon: Github, href: 'https://github.com/jasskhinda', color: 'text-white hover:text-blue-400' },
+              { icon: Linkedin, href: 'https://linkedin.com/in/jasskhinda', color: 'text-blue-400 hover:text-purple-600' },
+              { icon: Mail, href: 'mailto:info@jasskhinda.com', color: 'text-indigo-600 hover:text-blue-400' },
             ].map(({ icon: Icon, href, color }, index) => (
               <motion.a
                 key={href}
@@ -253,11 +253,11 @@ export default function CreativeHero() {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="text-[#75ccca]"
+          className="text-blue-400"
         >
           <ArrowDown size={32} />
         </motion.div>
-        <p className="text-[#75ccca] text-sm mt-2">Scroll for more magic</p>
+        <p className="text-blue-400 text-sm mt-2">Scroll for more magic</p>
       </motion.div>
     </section>
   )

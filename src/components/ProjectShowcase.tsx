@@ -192,13 +192,13 @@ export default function ProjectShowcase() {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null)
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-[#000000] via-[#0e8774] to-[#000000] relative overflow-hidden">
+    <section className="py-20 px-4 bg-gradient-to-br from-[#000000] via-indigo-900 to-[#000000] relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
         {[...Array(100)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-[#75ccca]/20 rounded-full"
+            className="absolute w-1 h-1 bg-blue-400/20 rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -225,7 +225,7 @@ export default function ProjectShowcase() {
           className="text-center mb-16"
         >
           <motion.h2
-            className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#75ccca] via-[#0e8774] to-[#75ccca] mb-6"
+            className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-600 to-indigo-600 mb-6"
             animate={{
               backgroundPosition: ['0%', '100%', '0%'],
             }}
@@ -246,7 +246,7 @@ export default function ProjectShowcase() {
           transition={{ duration: 0.8 }}
           className="mb-20"
         >
-          <div className="bg-gradient-to-r from-[#75ccca]/10 via-[#0e8774]/10 to-[#75ccca]/10 backdrop-blur-md rounded-3xl p-8 border border-[#75ccca]/30 relative overflow-hidden">
+          <div className="bg-gradient-to-r from-blue-500/10 via-purple-600/10 to-indigo-600/10 backdrop-blur-md rounded-3xl p-8 border border-blue-400/30 relative overflow-hidden">
             <motion.h3
               className="text-4xl md:text-5xl font-black text-white mb-2"
               animate={{ scale: [1, 1.02, 1] }}
@@ -254,7 +254,7 @@ export default function ProjectShowcase() {
             >
               {featuredProject.title}
             </motion.h3>
-            <p className="text-xl text-[#75ccca] font-semibold mb-6">{featuredProject.subtitle}</p>
+            <p className="text-xl text-blue-400 font-semibold mb-6">{featuredProject.subtitle}</p>
             <p className="text-white text-lg leading-relaxed mb-8 max-w-4xl">
               {featuredProject.description}
             </p>
@@ -263,36 +263,36 @@ export default function ProjectShowcase() {
             <div className="grid grid-cols-3 gap-6 mb-8">
               <motion.div
                 whileHover={{ scale: 1.05, rotateY: 10 }}
-                className="bg-[#75ccca]/20 border border-[#75ccca]/30 rounded-xl p-4 text-center backdrop-blur-sm"
+                className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-4 text-center backdrop-blur-sm"
               >
-                <Zap className="text-[#75ccca] mx-auto mb-2" size={32} />
+                <Zap className="text-blue-400 mx-auto mb-2" size={32} />
                 <div className="text-3xl font-bold text-white">{featuredProject.stats.appsBuilt}</div>
-                <div className="text-[#75ccca] text-sm font-medium">Applications Delivered</div>
+                <div className="text-blue-400 text-sm font-medium">Applications Delivered</div>
               </motion.div>
 
               <motion.div
                 whileHover={{ scale: 1.05, rotateY: 10 }}
-                className="bg-[#0e8774]/20 border border-[#0e8774]/30 rounded-xl p-4 text-center backdrop-blur-sm"
+                className="bg-purple-600/20 border border-purple-500/30 rounded-xl p-4 text-center backdrop-blur-sm"
               >
-                <Code2 className="text-[#0e8774] mx-auto mb-2" size={32} />
+                <Code2 className="text-purple-500 mx-auto mb-2" size={32} />
                 <div className="text-3xl font-bold text-white">{featuredProject.stats.platforms}</div>
-                <div className="text-[#75ccca] text-sm font-medium">Platforms (Web, iOS, Android)</div>
+                <div className="text-blue-400 text-sm font-medium">Platforms (Web, iOS, Android)</div>
               </motion.div>
 
               <motion.div
                 whileHover={{ scale: 1.05, rotateY: 10 }}
-                className="bg-[#0e8774]/20 border border-[#0e8774]/30 rounded-xl p-4 text-center backdrop-blur-sm"
+                className="bg-indigo-600/20 border border-indigo-500/30 rounded-xl p-4 text-center backdrop-blur-sm"
               >
-                <Star className="text-[#0e8774] mx-auto mb-2" size={32} />
+                <Star className="text-indigo-500 mx-auto mb-2" size={32} />
                 <div className="text-3xl font-bold text-white">{featuredProject.stats.technologies}</div>
-                <div className="text-[#75ccca] text-sm font-medium">Technology Stack</div>
+                <div className="text-blue-400 text-sm font-medium">Technology Stack</div>
               </motion.div>
             </div>
 
             {/* Full Stack Web Apps Section */}
             <div className="mb-8">
               <h4 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <Rocket className="text-[#75ccca]" />
+                <Rocket className="text-blue-400" />
                 FULL STACK WEB APPS
               </h4>
 
@@ -304,13 +304,13 @@ export default function ProjectShowcase() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                     whileHover={{ scale: 1.05 }}
-                    className="bg-[#0e8774]/20 border border-[#75ccca]/30 rounded-xl p-6 hover:border-[#75ccca]/50 transition-all"
+                    className="bg-indigo-600/20 border border-blue-400/30 rounded-xl p-6 hover:border-blue-400/50 transition-all"
                   >
                     <div className="mb-4">
                       <div className="flex items-center justify-between mb-2">
                         <h5 className="text-lg font-bold text-white">{app.name}</h5>
                         <span className={`w-3 h-3 rounded-full ${
-                          app.status === 'live' ? 'bg-[#75ccca] animate-pulse' : 'bg-[#0e8774]'
+                          app.status === 'live' ? 'bg-blue-400 animate-pulse' : 'bg-indigo-600'
                         }`} />
                       </div>
                       <p className="text-white/80 text-sm mb-3">
@@ -323,7 +323,7 @@ export default function ProjectShowcase() {
                           {app.tech.map((techItem, techIndex) => (
                             <span
                               key={techIndex}
-                              className="bg-[#75ccca]/10 text-[#75ccca] px-2 py-1 rounded text-xs border border-[#75ccca]/20"
+                              className="bg-blue-500/10 text-blue-400 px-2 py-1 rounded text-xs border border-blue-400/20"
                             >
                               {techItem}
                             </span>
@@ -339,7 +339,7 @@ export default function ProjectShowcase() {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex-1 bg-gradient-to-r from-[#75ccca] to-[#0e8774] hover:from-[#0e8774] hover:to-[#75ccca] text-white px-4 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all"
+                        className="flex-1 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-indigo-600 text-white px-4 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all"
                       >
                         <Eye size={16} />
                         Live
@@ -352,7 +352,7 @@ export default function ProjectShowcase() {
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="flex-1 bg-[#0e8774]/40 border border-[#75ccca]/50 hover:bg-[#0e8774]/60 text-white px-4 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all"
+                          className="flex-1 bg-indigo-600/40 border border-blue-400/50 hover:bg-indigo-600/60 text-white px-4 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all"
                         >
                           <Code2 size={16} />
                           Code
@@ -367,7 +367,7 @@ export default function ProjectShowcase() {
             {/* Full Stack Mobile Apps Section */}
             <div className="mb-8">
               <h4 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <Smartphone className="text-[#75ccca]" />
+                <Smartphone className="text-blue-400" />
                 FULL STACK MOBILE APPS
               </h4>
 
@@ -379,7 +379,7 @@ export default function ProjectShowcase() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                     whileHover={{ scale: 1.02 }}
-                    className="bg-gradient-to-r from-[#0e8774]/30 to-[#75ccca]/20 border-2 border-[#75ccca]/40 rounded-xl p-8 hover:border-[#75ccca]/60 transition-all"
+                    className="bg-gradient-to-r from-indigo-600/30 to-blue-500/20 border-2 border-blue-400/40 rounded-xl p-8 hover:border-blue-400/60 transition-all"
                   >
                     <div className="flex items-start justify-between mb-4">
                       <div>
@@ -398,7 +398,7 @@ export default function ProjectShowcase() {
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="bg-gradient-to-r from-[#75ccca] to-[#0e8774] hover:from-[#0e8774] hover:to-[#75ccca] text-white px-6 py-4 rounded-lg font-medium flex items-center justify-center gap-3 transition-all shadow-lg"
+                          className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-indigo-600 text-white px-6 py-4 rounded-lg font-medium flex items-center justify-center gap-3 transition-all shadow-lg"
                         >
                           <Smartphone size={20} />
                           <span className="text-lg">Download for {platform.name}</span>
@@ -413,7 +413,7 @@ export default function ProjectShowcase() {
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="bg-[#0e8774]/40 border-2 border-[#75ccca]/50 hover:bg-[#0e8774]/60 text-white px-6 py-4 rounded-lg font-medium flex items-center justify-center gap-3 transition-all shadow-lg"
+                          className="bg-indigo-600/40 border-2 border-blue-400/50 hover:bg-indigo-600/60 text-white px-6 py-4 rounded-lg font-medium flex items-center justify-center gap-3 transition-all shadow-lg"
                         >
                           <Code2 size={20} />
                           <span className="text-lg">View Code</span>
@@ -426,7 +426,7 @@ export default function ProjectShowcase() {
                     <div className="space-y-2 mb-4">
                       {app.features.map((feature, fIndex) => (
                         <div key={fIndex} className="flex items-center gap-3 text-white">
-                          <div className="w-2 h-2 bg-[#75ccca] rounded-full" />
+                          <div className="w-2 h-2 bg-blue-400 rounded-full" />
                           <span className="text-sm">{feature}</span>
                         </div>
                       ))}
@@ -437,7 +437,7 @@ export default function ProjectShowcase() {
                       {app.tech.map((tech, tIndex) => (
                         <span
                           key={tIndex}
-                          className="bg-[#75ccca]/20 text-[#75ccca] px-3 py-1 rounded-full text-xs font-medium border border-[#75ccca]/30"
+                          className="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs font-medium border border-blue-400/30"
                         >
                           {tech}
                         </span>
@@ -451,7 +451,7 @@ export default function ProjectShowcase() {
             {/* Tech Stack */}
             <div className="mb-8">
               <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Code2 className="text-[#75ccca]" />
+                <Code2 className="text-blue-400" />
                 Technology Stack
               </h4>
               <div className="flex flex-wrap gap-3">
@@ -462,7 +462,7 @@ export default function ProjectShowcase() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.1 }}
                     whileHover={{ scale: 1.1, y: -2 }}
-                    className="bg-gradient-to-r from-[#75ccca]/20 to-[#0e8774]/20 text-[#75ccca] px-4 py-2 rounded-full text-sm font-medium border border-[#75ccca]/30"
+                    className="bg-gradient-to-r from-blue-500/20 to-purple-600/20 text-blue-400 px-4 py-2 rounded-full text-sm font-medium border border-blue-400/30"
                   >
                     {tech}
                   </motion.span>
@@ -471,7 +471,7 @@ export default function ProjectShowcase() {
             </div>
 
             {/* Business Impact */}
-            <div className="bg-[#75ccca]/10 border border-[#75ccca]/30 rounded-xl p-6">
+            <div className="bg-blue-500/10 border border-blue-400/30 rounded-xl p-6">
               <h4 className="text-xl font-bold text-white mb-4">🚀 Business Impact</h4>
               <div className="grid md:grid-cols-2 gap-4">
                 {featuredProject.impact.map((item, index) => (
@@ -482,7 +482,7 @@ export default function ProjectShowcase() {
                     transition={{ delay: index * 0.1 }}
                     className="flex items-center gap-3"
                   >
-                    <div className="w-2 h-2 bg-[#75ccca] rounded-full" />
+                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
                     <span className="text-white">{item}</span>
                   </motion.div>
                 ))}
@@ -509,11 +509,11 @@ export default function ProjectShowcase() {
                 whileHover={{ scale: 1.05, rotateY: 5 }}
                 onMouseEnter={() => setHoveredProject(index)}
                 onMouseLeave={() => setHoveredProject(null)}
-                className="bg-[#0e8774]/20 backdrop-blur-md rounded-xl p-6 border border-[#75ccca]/30 hover:border-[#75ccca]/50 transition-all duration-300 relative overflow-hidden"
+                className="bg-indigo-600/20 backdrop-blur-md rounded-xl p-6 border border-blue-400/30 hover:border-blue-400/50 transition-all duration-300 relative overflow-hidden"
               >
                 {/* Hover Effect */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-[#75ccca]/10 to-[#0e8774]/10"
+                  className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-600/10"
                   animate={{
                     opacity: hoveredProject === index ? 1 : 0,
                   }}
@@ -522,7 +522,7 @@ export default function ProjectShowcase() {
 
                 <div className="relative z-10">
                   <div className="flex items-start justify-between mb-4">
-                    <span className="bg-[#75ccca]/20 text-[#75ccca] px-3 py-1 rounded-full text-xs font-medium">
+                    <span className="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs font-medium">
                       {project.type}
                     </span>
                     {project.url && (
@@ -531,7 +531,7 @@ export default function ProjectShowcase() {
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.2, rotate: 15 }}
-                        className="text-[#75ccca] hover:text-[#75ccca] transition-colors"
+                        className="text-blue-400 hover:text-blue-400 transition-colors"
                       >
                         <ExternalLink size={18} />
                       </motion.a>
@@ -545,7 +545,7 @@ export default function ProjectShowcase() {
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="bg-[#0e8774] text-white px-2 py-1 rounded text-xs"
+                        className="bg-indigo-600 text-white px-2 py-1 rounded text-xs"
                       >
                         {tech}
                       </span>
@@ -554,15 +554,15 @@ export default function ProjectShowcase() {
 
                   <div className="space-y-2">
                     {project.highlights.map((highlight, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm text-[#75ccca]">
-                        <div className="w-1 h-1 bg-[#75ccca] rounded-full" />
+                      <div key={i} className="flex items-center gap-2 text-sm text-blue-400">
+                        <div className="w-1 h-1 bg-blue-400 rounded-full" />
                         {highlight}
                       </div>
                     ))}
                   </div>
 
-                  <div className="mt-4 pt-4 border-t border-[#75ccca]/30">
-                    <span className="text-[#75ccca] font-medium text-sm">
+                  <div className="mt-4 pt-4 border-t border-blue-400/30">
+                    <span className="text-blue-400 font-medium text-sm">
                       ✅ {project.status}
                     </span>
                   </div>

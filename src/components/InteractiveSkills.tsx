@@ -8,49 +8,49 @@ const skillCategories = [
   {
     title: 'Full-Stack Development',
     icon: Code,
-    color: 'from-[#75ccca] to-[#0e8774]',
+    color: 'from-blue-400 to-indigo-600',
     skills: [
       { name: 'Next.js', level: 90, color: '#000000' },
-      { name: 'React.js', level: 85, color: '#75ccca' },
-      { name: 'Supabase', level: 85, color: '#0e8774' },
-      { name: 'Firebase', level: 80, color: '#75ccca' },
-      { name: 'MongoDB', level: 75, color: '#0e8774' },
-      { name: 'Tailwind CSS', level: 90, color: '#75ccca' },
+      { name: 'React.js', level: 85, color: '#60a5fa' },
+      { name: 'Supabase', level: 85, color: '#4f46e5' },
+      { name: 'Firebase', level: 80, color: '#60a5fa' },
+      { name: 'MongoDB', level: 75, color: '#4f46e5' },
+      { name: 'Tailwind CSS', level: 90, color: '#60a5fa' },
     ]
   },
   {
     title: 'Web Technologies',
     icon: Database,
-    color: 'from-[#0e8774] to-[#75ccca]',
+    color: 'from-purple-600 to-blue-500',
     skills: [
       { name: 'Next.js', level: 90, color: '#000000' },
-      { name: 'React.js', level: 85, color: '#75ccca' },
-      { name: 'Tailwind CSS', level: 90, color: '#0e8774' },
-      { name: 'HTML/CSS', level: 95, color: '#75ccca' },
-      { name: 'JavaScript', level: 85, color: '#0e8774' },
-      { name: 'TypeScript', level: 70, color: '#75ccca' },
-      { name: 'Bootstrap', level: 80, color: '#0e8774' },
+      { name: 'React.js', level: 85, color: '#60a5fa' },
+      { name: 'Tailwind CSS', level: 90, color: '#9333ea' },
+      { name: 'HTML/CSS', level: 95, color: '#60a5fa' },
+      { name: 'JavaScript', level: 85, color: '#4f46e5' },
+      { name: 'TypeScript', level: 70, color: '#60a5fa' },
+      { name: 'Bootstrap', level: 80, color: '#4f46e5' },
     ]
   },
   {
     title: 'Mobile Development',
     icon: Smartphone,
-    color: 'from-[#75ccca] to-[#0e8774]',
+    color: 'from-blue-500 to-purple-600',
     skills: [
-      { name: 'React Native', level: 75, color: '#75ccca' },
-      { name: 'Firebase', level: 80, color: '#0e8774' },
-      { name: 'Supabase', level: 85, color: '#75ccca' },
-      { name: 'Mobile-First Design', level: 85, color: '#0e8774' },
+      { name: 'React Native', level: 75, color: '#60a5fa' },
+      { name: 'Firebase', level: 80, color: '#4f46e5' },
+      { name: 'Supabase', level: 85, color: '#60a5fa' },
+      { name: 'Mobile-First Design', level: 85, color: '#9333ea' },
     ]
   },
   {
     title: 'E-commerce',
     icon: ShoppingCart,
-    color: 'from-[#0e8774] to-[#75ccca]',
+    color: 'from-indigo-600 to-blue-400',
     skills: [
-      { name: 'WordPress', level: 95, color: '#75ccca' },
-      { name: 'Shopify', level: 85, color: '#0e8774' },
-      { name: 'WooCommerce', level: 90, color: '#75ccca' },
+      { name: 'WordPress', level: 95, color: '#60a5fa' },
+      { name: 'Shopify', level: 85, color: '#4f46e5' },
+      { name: 'WooCommerce', level: 90, color: '#60a5fa' },
     ]
   }
 ]
@@ -60,13 +60,13 @@ export default function InteractiveSkills() {
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null)
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-[#000000] via-[#0e8774] to-[#000000] relative overflow-hidden">
+    <section className="py-20 px-4 bg-gradient-to-br from-[#000000] via-indigo-900 to-[#000000] relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         {[...Array(30)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-[#75ccca]/30 rounded-full"
+            className="absolute w-2 h-2 bg-blue-400/30 rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -92,7 +92,7 @@ export default function InteractiveSkills() {
           className="text-center mb-16"
         >
           <motion.h2
-            className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#75ccca] via-[#0e8774] to-[#75ccca] mb-6"
+            className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-600 to-indigo-600 mb-6"
             animate={{
               backgroundPosition: ['0%', '100%', '0%'],
             }}
@@ -116,8 +116,8 @@ export default function InteractiveSkills() {
               whileTap={{ scale: 0.95 }}
               className={`relative p-6 rounded-xl backdrop-blur-sm border-2 transition-all duration-300 ${
                 selectedCategory === index
-                  ? 'border-[#75ccca] bg-[#75ccca]/10'
-                  : 'border-[#75ccca]/30 bg-[#0e8774]/20 hover:border-[#75ccca]/50'
+                  ? 'border-blue-400 bg-blue-400/10'
+                  : 'border-blue-400/30 bg-indigo-600/20 hover:border-blue-400/50'
               }`}
             >
               <motion.div
@@ -132,15 +132,15 @@ export default function InteractiveSkills() {
                   animate={selectedCategory === index ? { rotate: 360 } : {}}
                   transition={{ duration: 1 }}
                 >
-                  <category.icon 
-                    size={32} 
+                  <category.icon
+                    size={32}
                     className={`mx-auto mb-3 ${
-                      selectedCategory === index ? 'text-[#75ccca]' : 'text-[#75ccca]'
-                    }`} 
+                      selectedCategory === index ? 'text-blue-400' : 'text-blue-400'
+                    }`}
                   />
                 </motion.div>
                 <h3 className={`font-bold ${
-                  selectedCategory === index ? 'text-[#75ccca]' : 'text-white'
+                  selectedCategory === index ? 'text-blue-400' : 'text-white'
                 }`}>
                   {category.title}
                 </h3>
@@ -155,7 +155,7 @@ export default function InteractiveSkills() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="bg-[#0e8774]/20 backdrop-blur-md rounded-2xl p-8 border border-[#75ccca]/30"
+          className="bg-indigo-600/20 backdrop-blur-md rounded-2xl p-8 border border-blue-400/30"
         >
           <div className="flex items-center gap-4 mb-8">
             <motion.div
@@ -164,7 +164,7 @@ export default function InteractiveSkills() {
             >
               {(() => {
                 const Icon = skillCategories[selectedCategory].icon
-                return <Icon className="text-[#75ccca]" size={40} />
+                return <Icon className="text-blue-400" size={40} />
               })()}
             </motion.div>
             <h3 className="text-3xl font-bold text-white">
@@ -174,7 +174,7 @@ export default function InteractiveSkills() {
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
             >
-              <Star className="text-[#75ccca]" size={24} />
+              <Star className="text-blue-400" size={24} />
             </motion.div>
           </div>
 
@@ -189,24 +189,24 @@ export default function InteractiveSkills() {
                 onMouseLeave={() => setHoveredSkill(null)}
                 className="group"
               >
-                <div className="bg-[#0e8774]/20 p-6 rounded-xl border border-[#75ccca]/30 hover:border-[#75ccca]/50 transition-all duration-300">
+                <div className="bg-indigo-600/20 p-6 rounded-xl border border-blue-400/30 hover:border-blue-400/50 transition-all duration-300">
                   <div className="flex items-center justify-between mb-4">
                     <h4 className="text-white font-semibold text-lg">{skill.name}</h4>
                     <motion.div
                       animate={hoveredSkill === skill.name ? { rotate: 180 } : { rotate: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <Zap 
-                        className="text-[#75ccca]" 
+                      <Zap
+                        className="text-blue-400"
                         size={20}
-                        style={{ filter: hoveredSkill === skill.name ? 'drop-shadow(0 0 8px #75ccca)' : 'none' }}
+                        style={{ filter: hoveredSkill === skill.name ? 'drop-shadow(0 0 8px #60a5fa)' : 'none' }}
                       />
                     </motion.div>
                   </div>
 
                   {/* Progress Bar */}
                   <div className="relative">
-                    <div className="w-full bg-[#0e8774] rounded-full h-3 mb-2">
+                    <div className="w-full bg-indigo-600 rounded-full h-3 mb-2">
                       <motion.div
                         className="h-3 rounded-full relative overflow-hidden"
                         style={{ backgroundColor: skill.color }}
@@ -224,11 +224,11 @@ export default function InteractiveSkills() {
                       </motion.div>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-[#75ccca]">Proficiency</span>
-                      <motion.span 
+                      <span className="text-blue-400">Proficiency</span>
+                      <motion.span
                         className="font-bold"
-                        animate={{ 
-                          color: hoveredSkill === skill.name ? '#ffffff' : '#75ccca',
+                        animate={{
+                          color: hoveredSkill === skill.name ? '#ffffff' : '#60a5fa',
                           scale: hoveredSkill === skill.name ? 1.1 : 1
                         }}
                       >
@@ -249,13 +249,13 @@ export default function InteractiveSkills() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-16 text-center"
         >
-          <div className="bg-gradient-to-r from-[#75ccca]/20 via-[#0e8774]/20 to-[#75ccca]/20 backdrop-blur-md rounded-2xl p-8 border border-[#75ccca]/30">
+          <div className="bg-gradient-to-r from-blue-500/20 via-purple-600/20 to-indigo-600/20 backdrop-blur-md rounded-2xl p-8 border border-blue-400/30">
             <motion.div
               animate={{ rotate: [0, 360] }}
               transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
               className="inline-block mb-4"
             >
-              <Zap className="text-[#75ccca]" size={48} />
+              <Zap className="text-blue-400" size={48} />
             </motion.div>
             <h3 className="text-2xl font-bold text-white mb-4">
               Continuously Evolving Tech Stack

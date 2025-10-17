@@ -10,56 +10,64 @@ const webApps = [
     url: 'https://facility.compassionatecaretransportation.com/',
     github: 'https://github.com/jasskhinda/facility_app',
     status: 'live',
-    description: 'Healthcare facility management interface'
+    description: 'Multi-tenant facility management with automated invoicing, client management, and trip scheduling',
+    tech: ['Real-time updates', 'Role-based access', 'Automated billing']
   },
   {
     name: 'Booking App',
     url: 'https://book.compassionatecaretransportation.com/',
     github: 'https://github.com/jasskhinda/booking_app',
     status: 'live',
-    description: 'Patient booking and scheduling system'
+    description: 'Dynamic pricing engine with real-time cost calculation and automated trip scheduling',
+    tech: ['Cost optimization', 'Payment integration', 'Trip management']
   },
   {
     name: 'Dispatcher Dashboard',
     url: 'https://dispatch.compassionatecaretransportation.com/',
     github: 'https://github.com/jasskhinda/dispatcher_app',
     status: 'live',
-    description: 'Real-time dispatch and routing control'
+    description: 'Real-time dispatch control with live driver tracking, trip management, and route optimization',
+    tech: ['Real-time GPS', 'Live updates', 'Trip approval workflow']
   },
   {
     name: 'Admin Panel',
     url: 'https://admin.compassionatecaretransportation.com/',
     github: 'https://github.com/jasskhinda/admin_app',
     status: 'live',
-    description: 'System administration and analytics'
+    description: 'Enterprise admin dashboard with user management, analytics, and system-wide configuration',
+    tech: ['User management', 'Analytics', 'System configuration']
   },
   {
     name: 'Driver App',
     url: 'https://driver.compassionatecaretransportation.com/',
     github: 'https://github.com/jasskhinda/driver',
     status: 'live',
-    description: 'Driver mobile application'
+    description: 'Driver interface with trip acceptance, real-time location sharing, and status updates',
+    tech: ['GPS tracking', 'Push notifications', 'Trip management']
   },
   {
     name: 'Compassionate Caregivers Web Portal',
     url: 'https://ccapp.compassionatecaregivershc.com/',
+    github: 'https://github.com/jasskhinda/compassionate-caregivers-app',
     status: 'live',
-    description: 'Healthcare management web portal'
+    description: 'Comprehensive caregiver training platform with exam management, video content delivery, real-time chat, and night shift monitoring system',
+    tech: ['Video streaming', 'Real-time chat', 'Exam system', 'Alert system']
   },
   {
     name: 'WhatsTheRub',
     url: 'https://whats-the-rub.vercel.app/',
     github: 'https://github.com/jasskhinda/WhatsTheRub',
     status: 'live',
-    description: 'Full-stack web application'
+    description: 'Full-stack web application with modern UI/UX',
+    tech: ['Next.js', 'React', 'Modern stack']
   }
 ]
 
 const mobileApps = [
   {
     name: 'Compassionate Caregivers',
-    description: 'Full-featured healthcare management mobile application',
-    tech: ['Flutter', 'React Native', 'Firebase', 'Real-time Sync'],
+    description: 'Enterprise caregiver training platform with exam management, video content delivery system, real-time group & private chat, and automated night shift monitoring with alert tracking',
+    tech: ['Flutter', 'React Native', 'Firebase', 'Video Streaming', 'Real-time Chat'],
     platforms: [
       {
         name: 'Android',
@@ -72,12 +80,14 @@ const mobileApps = [
         icon: 'Apple'
       }
     ],
+    github: 'https://github.com/jasskhinda/compassionate-caregivers-app',
     features: [
-      'Cross-platform mobile solution',
-      'Real-time healthcare data management',
-      'Secure authentication & authorization',
-      'Offline-first architecture',
-      'Push notifications & alerts'
+      'Admin-managed exam creation & caregiver testing',
+      'Video content management (public/private sharing)',
+      'Real-time group & private messaging',
+      'Night shift monitoring with automated alerts',
+      'Staff progress tracking & content delivery',
+      'Cross-platform (iOS, Android, Web)'
     ]
   }
 ]
@@ -237,18 +247,6 @@ export default function ProjectShowcase() {
           className="mb-20"
         >
           <div className="bg-gradient-to-r from-[#75ccca]/10 via-[#0e8774]/10 to-[#75ccca]/10 backdrop-blur-md rounded-3xl p-8 border border-[#75ccca]/30 relative overflow-hidden">
-            {/* Floating Badge */}
-            <motion.div
-              animate={{ rotate: [0, 360] }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute top-4 right-4"
-            >
-              <div className="bg-[#75ccca] text-black px-4 py-2 rounded-full font-bold text-sm flex items-center gap-2">
-                <Star size={16} />
-                LEGENDARY
-              </div>
-            </motion.div>
-
             <motion.h3
               className="text-4xl md:text-5xl font-black text-white mb-2"
               animate={{ scale: [1, 1.02, 1] }}
@@ -315,9 +313,23 @@ export default function ProjectShowcase() {
                           app.status === 'live' ? 'bg-[#75ccca] animate-pulse' : 'bg-[#0e8774]'
                         }`} />
                       </div>
-                      <p className="text-white/80 text-sm mb-4">
+                      <p className="text-white/80 text-sm mb-3">
                         {app.description}
                       </p>
+
+                      {/* Tech badges */}
+                      {app.tech && (
+                        <div className="flex flex-wrap gap-1 mb-3">
+                          {app.tech.map((techItem, techIndex) => (
+                            <span
+                              key={techIndex}
+                              className="bg-[#75ccca]/10 text-[#75ccca] px-2 py-1 rounded text-xs border border-[#75ccca]/20"
+                            >
+                              {techItem}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
 
                     <div className="flex gap-2">
@@ -377,7 +389,7 @@ export default function ProjectShowcase() {
                     </div>
 
                     {/* Platform Buttons */}
-                    <div className="grid md:grid-cols-2 gap-4 mb-6">
+                    <div className="grid md:grid-cols-3 gap-4 mb-6">
                       {app.platforms.map((platform, pIndex) => (
                         <motion.a
                           key={pIndex}
@@ -393,6 +405,21 @@ export default function ProjectShowcase() {
                           <ExternalLink size={16} />
                         </motion.a>
                       ))}
+
+                      {app.github && (
+                        <motion.a
+                          href={app.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="bg-[#0e8774]/40 border-2 border-[#75ccca]/50 hover:bg-[#0e8774]/60 text-white px-6 py-4 rounded-lg font-medium flex items-center justify-center gap-3 transition-all shadow-lg"
+                        >
+                          <Code2 size={20} />
+                          <span className="text-lg">View Code</span>
+                          <ExternalLink size={16} />
+                        </motion.a>
+                      )}
                     </div>
 
                     {/* Features */}

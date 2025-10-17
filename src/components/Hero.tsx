@@ -36,9 +36,9 @@ export default function Hero() {
 
           <div className="max-w-2xl mx-auto">
             <p className="text-lg md:text-xl text-gray-400 mb-4">
-              I build production-ready web applications that solve real business problems.
+              I build scalable, production-ready applications across web and mobile platforms that solve real business problems.
             </p>
-            
+
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -46,7 +46,7 @@ export default function Hero() {
               className="bg-gradient-to-r from-blue-600/10 to-purple-600/10 border border-blue-600/20 rounded-lg p-4 mb-8"
             >
               <p className="text-gray-300 font-medium">
-                🚀 Recently completed <span className="text-blue-400">3 healthcare apps in 19 days</span> that 2 developers couldn&apos;t finish in 3 years
+                🚀 Specializing in <span className="text-blue-400">enterprise full-stack development</span> with expertise in Next.js, React, Flutter & modern cloud technologies
               </p>
             </motion.div>
           </div>

@@ -144,7 +144,7 @@ export default function CreativeHero() {
                   <Zap className="text-[#75ccca]" size={32} />
                 </motion.div>
                 <h2 className="text-2xl md:text-3xl font-bold text-white">
-                  LEGENDARY ACHIEVEMENT
+                  FULL-STACK EXCELLENCE
                 </h2>
                 <motion.div
                   animate={{ scale: [1, 1.2, 1] }}
@@ -154,10 +154,10 @@ export default function CreativeHero() {
                 </motion.div>
               </div>
               <p className="text-xl md:text-2xl text-[#75ccca] font-semibold mb-2">
-                🏆 Completed 3 Healthcare Apps in 19 Days
+                🏆 Enterprise Healthcare Platform Development
               </p>
               <p className="text-white">
-                What 2 previous developers couldn&apos;t finish in 3 years
+                6+ Production Applications • Web, iOS & Android • Modern Tech Stack
               </p>
             </motion.div>
           </motion.div>

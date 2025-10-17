@@ -2,58 +2,91 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { ExternalLink, Star, Clock, Users, Zap, Eye, Code2, Rocket } from 'lucide-react'
+import { ExternalLink, Star, Zap, Eye, Code2, Rocket, Smartphone, Github } from 'lucide-react'
+
+const webApps = [
+  {
+    name: 'Facility Portal',
+    url: 'https://facility.compassionatecaretransportation.com/',
+    status: 'live',
+    description: 'Healthcare facility management interface'
+  },
+  {
+    name: 'Booking App',
+    url: 'https://book.compassionatecaretransportation.com/',
+    status: 'live',
+    description: 'Patient booking and scheduling system'
+  },
+  {
+    name: 'Dispatcher Dashboard',
+    url: 'https://dispatch.compassionatecaretransportation.com/',
+    status: 'live',
+    description: 'Real-time dispatch and routing control'
+  },
+  {
+    name: 'Admin Panel',
+    url: 'https://admin.compassionatecaretransportation.com/',
+    status: 'live',
+    description: 'System administration and analytics'
+  },
+  {
+    name: 'Driver App',
+    url: 'https://driver.compassionatecaretransportation.com/',
+    status: 'live',
+    description: 'Driver mobile application'
+  },
+  {
+    name: 'Compassionate Caregivers Web Portal',
+    url: 'https://ccapp.compassionatecaregivershc.com/',
+    status: 'live',
+    description: 'Healthcare management web portal'
+  }
+]
+
+const mobileApps = [
+  {
+    name: 'Compassionate Caregivers',
+    description: 'Full-featured healthcare management mobile application',
+    tech: ['Flutter', 'React Native', 'Firebase', 'Real-time Sync'],
+    platforms: [
+      {
+        name: 'Android',
+        url: 'https://play.google.com/store/apps/details?id=com.compassionate.caregiver&pcampaignid=web_share',
+        icon: 'Android'
+      },
+      {
+        name: 'iOS',
+        url: 'https://apps.apple.com/us/app/compassionate-caregivers-app/id6751550773',
+        icon: 'Apple'
+      }
+    ],
+    features: [
+      'Cross-platform mobile solution',
+      'Real-time healthcare data management',
+      'Secure authentication & authorization',
+      'Offline-first architecture',
+      'Push notifications & alerts'
+    ]
+  }
+]
 
 const featuredProject = {
   title: 'Compassionate Caregivers Ecosystem',
-  subtitle: 'Healthcare Transportation Revolution',
-  description: 'Inherited 5 unfinished apps in development hell for 3 years. Rebuilt everything from scratch using cutting-edge tech stack and delivered 3 production-ready apps in just 19 days.',
+  subtitle: 'Enterprise Healthcare Transportation Platform',
+  description: 'Comprehensive healthcare transportation management system featuring multiple web applications and a cross-platform mobile solution. Built with modern architecture patterns and real-time capabilities to serve healthcare facilities, patients, dispatchers, and drivers.',
   image: '/api/placeholder/600/400',
-  tech: ['Next.js', 'React.js', 'Supabase', 'Tailwind CSS', 'MongoDB', 'Firebase'],
+  tech: ['Next.js', 'React.js', 'Flutter', 'Supabase', 'Tailwind CSS', 'MongoDB', 'Firebase'],
   stats: {
-    daysToComplete: 19,
-    appsBuilt: 3,
-    totalApps: 5,
-    previousDevTime: '3 years'
+    appsBuilt: 6,
+    platforms: 3,
+    technologies: 7
   },
-  apps: [
-    { 
-      name: 'Facility Portal', 
-      url: 'https://facility.compassionatecaretransportation.com/',
-      status: 'live',
-      description: 'Healthcare facility management interface'
-    },
-    { 
-      name: 'Booking App', 
-      url: 'https://book.compassionatecaretransportation.com/',
-      status: 'live',
-      description: 'Patient booking and scheduling system'
-    },
-    { 
-      name: 'Dispatcher Dashboard', 
-      url: 'https://dispatch.compassionatecaretransportation.com/',
-      status: 'live',
-      description: 'Real-time dispatch and routing control'
-    },
-    { 
-      name: 'Admin Panel', 
-      url: 'https://admin.compassionatecaretransportation.com/',
-      status: 'development',
-      description: 'System administration and analytics'
-    },
-    { 
-      name: 'Driver App', 
-      url: 'https://driver.compassionatecaretransportation.com/',
-      status: 'development',
-      description: 'Driver mobile application'
-    }
-  ],
   impact: [
     'Reduced booking time by 75%',
     'Real-time driver tracking and dispatch',
     'Automated scheduling and routing',
     'Seamless facility integration',
-    'Owner and staff extremely impressed'
+    'Cross-platform mobile accessibility'
   ]
 }
 
@@ -217,53 +250,44 @@ export default function ProjectShowcase() {
             </p>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
-              <motion.div
-                whileHover={{ scale: 1.05, rotateY: 10 }}
-                className="bg-[#0e8774]/20 border border-[#0e8774]/30 rounded-xl p-4 text-center backdrop-blur-sm"
-              >
-                <Clock className="text-[#75ccca] mx-auto mb-2" size={32} />
-                <div className="text-3xl font-bold text-white">{featuredProject.stats.daysToComplete}</div>
-                <div className="text-[#75ccca] text-sm font-medium">Days to Complete</div>
-              </motion.div>
-              
+            <div className="grid grid-cols-3 gap-6 mb-8">
               <motion.div
                 whileHover={{ scale: 1.05, rotateY: 10 }}
                 className="bg-[#75ccca]/20 border border-[#75ccca]/30 rounded-xl p-4 text-center backdrop-blur-sm"
               >
                 <Zap className="text-[#75ccca] mx-auto mb-2" size={32} />
                 <div className="text-3xl font-bold text-white">{featuredProject.stats.appsBuilt}</div>
-                <div className="text-[#75ccca] text-sm font-medium">Apps Delivered</div>
+                <div className="text-[#75ccca] text-sm font-medium">Applications Delivered</div>
               </motion.div>
-              
+
               <motion.div
                 whileHover={{ scale: 1.05, rotateY: 10 }}
                 className="bg-[#0e8774]/20 border border-[#0e8774]/30 rounded-xl p-4 text-center backdrop-blur-sm"
               >
-                <Users className="text-[#0e8774] mx-auto mb-2" size={32} />
-                <div className="text-3xl font-bold text-white">2</div>
-                <div className="text-[#75ccca] text-sm font-medium">Previous Devs Failed</div>
+                <Code2 className="text-[#0e8774] mx-auto mb-2" size={32} />
+                <div className="text-3xl font-bold text-white">{featuredProject.stats.platforms}</div>
+                <div className="text-[#75ccca] text-sm font-medium">Platforms (Web, iOS, Android)</div>
               </motion.div>
-              
+
               <motion.div
                 whileHover={{ scale: 1.05, rotateY: 10 }}
                 className="bg-[#0e8774]/20 border border-[#0e8774]/30 rounded-xl p-4 text-center backdrop-blur-sm"
               >
                 <Star className="text-[#0e8774] mx-auto mb-2" size={32} />
-                <div className="text-3xl font-bold text-white">100%</div>
-                <div className="text-[#75ccca] text-sm font-medium">Success Rate</div>
+                <div className="text-3xl font-bold text-white">{featuredProject.stats.technologies}</div>
+                <div className="text-[#75ccca] text-sm font-medium">Technology Stack</div>
               </motion.div>
             </div>
 
-            {/* Full Stack Apps Section */}
+            {/* Full Stack Web Apps Section */}
             <div className="mb-8">
               <h4 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
                 <Rocket className="text-[#75ccca]" />
-                FULL STACK APPS
+                FULL STACK WEB APPS
               </h4>
-              
+
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {featuredProject.apps.map((app, index) => (
+                {webApps.map((app, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
@@ -283,7 +307,7 @@ export default function ProjectShowcase() {
                         {app.description}
                       </p>
                     </div>
-                    
+
                     <motion.a
                       href={app.url}
                       target="_blank"
@@ -296,6 +320,75 @@ export default function ProjectShowcase() {
                       View Live
                       <ExternalLink size={14} />
                     </motion.a>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Full Stack Mobile Apps Section */}
+            <div className="mb-8">
+              <h4 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                <Smartphone className="text-[#75ccca]" />
+                FULL STACK MOBILE APPS
+              </h4>
+
+              <div className="grid gap-6">
+                {mobileApps.map((app, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ scale: 1.02 }}
+                    className="bg-gradient-to-r from-[#0e8774]/30 to-[#75ccca]/20 border-2 border-[#75ccca]/40 rounded-xl p-8 hover:border-[#75ccca]/60 transition-all"
+                  >
+                    <div className="flex items-start justify-between mb-4">
+                      <div>
+                        <h5 className="text-2xl font-bold text-white mb-2">{app.name}</h5>
+                        <p className="text-white/80 text-base mb-4">{app.description}</p>
+                      </div>
+                    </div>
+
+                    {/* Platform Buttons */}
+                    <div className="grid md:grid-cols-2 gap-4 mb-6">
+                      {app.platforms.map((platform, pIndex) => (
+                        <motion.a
+                          key={pIndex}
+                          href={platform.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="bg-gradient-to-r from-[#75ccca] to-[#0e8774] hover:from-[#0e8774] hover:to-[#75ccca] text-white px-6 py-4 rounded-lg font-medium flex items-center justify-center gap-3 transition-all shadow-lg"
+                        >
+                          <Smartphone size={20} />
+                          <span className="text-lg">Download for {platform.name}</span>
+                          <ExternalLink size={16} />
+                        </motion.a>
+                      ))}
+                    </div>
+
+                    {/* Features */}
+                    <div className="space-y-2 mb-4">
+                      {app.features.map((feature, fIndex) => (
+                        <div key={fIndex} className="flex items-center gap-3 text-white">
+                          <div className="w-2 h-2 bg-[#75ccca] rounded-full" />
+                          <span className="text-sm">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Tech Stack */}
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      {app.tech.map((tech, tIndex) => (
+                        <span
+                          key={tIndex}
+                          className="bg-[#75ccca]/20 text-[#75ccca] px-3 py-1 rounded-full text-xs font-medium border border-[#75ccca]/30"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </motion.div>
                 ))}
               </div>

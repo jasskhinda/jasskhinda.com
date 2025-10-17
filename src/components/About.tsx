@@ -24,15 +24,15 @@ export default function About() {
             className="space-y-6"
           >
             <p className="text-white text-lg leading-relaxed">
-              I&apos;m a <span className="text-[#75ccca] font-semibold">Full-Stack Developer</span> currently working at Compassionate Caregivers, where I&apos;ve made a significant impact by completing complex healthcare transportation applications that previous developers couldn&apos;t deliver.
+              I&apos;m a <span className="text-[#75ccca] font-semibold">Full-Stack Developer</span> specializing in building scalable enterprise applications across web and mobile platforms. Currently working at Compassionate Caregivers, I lead the development of comprehensive healthcare management systems.
             </p>
 
             <p className="text-white text-lg leading-relaxed">
-              My approach is simple: I focus on <span className="text-[#75ccca]">delivering working solutions quickly</span>. When I joined Compassionate Caregivers, I inherited 5 unfinished apps that had been in development for 3 years. I rebuilt them from scratch using modern technologies and delivered 3 production-ready apps in just 19 days.
+              My expertise spans the entire development lifecycle—from architecting solutions to deployment and maintenance. I&apos;ve successfully delivered multiple production-grade applications using modern tech stacks including <span className="text-[#75ccca]">Next.js, React, Flutter, and cloud infrastructure</span>.
             </p>
 
             <p className="text-white text-lg leading-relaxed">
-              I&apos;m driven to secure a full-time developer position where I can bring immediate value to your team. I thrive on solving complex challenges and delivering high-quality solutions that exceed expectations.
+              I&apos;m seeking a full-time developer position where I can leverage my proven track record in building robust, scalable applications. I excel at translating business requirements into technical solutions that drive measurable results.
             </p>
 
             <div className="bg-gradient-to-r from-[#75ccca]/10 to-[#0e8774]/10 border border-[#75ccca]/20 rounded-lg p-6">
@@ -40,19 +40,19 @@ export default function About() {
               <ul className="space-y-2 text-white">
                 <li className="flex items-start">
                   <span className="text-[#75ccca] mr-2">✓</span>
-                  Proven ability to deliver when others can&apos;t
+                  Enterprise-level full-stack development expertise
                 </li>
                 <li className="flex items-start">
                   <span className="text-[#75ccca] mr-2">✓</span>
-                  Full-stack expertise with modern tech stack
+                  Cross-platform mobile & web application development
                 </li>
                 <li className="flex items-start">
                   <span className="text-[#75ccca] mr-2">✓</span>
-                  Business-focused problem solving
+                  Strong problem-solving and system architecture skills
                 </li>
                 <li className="flex items-start">
                   <span className="text-[#75ccca] mr-2">✓</span>
-                  Ready to contribute from day one
+                  Proven track record of delivering production applications
                 </li>
               </ul>
             </div>
@@ -65,23 +65,23 @@ export default function About() {
             className="grid grid-cols-2 gap-6"
           >
             <div className="bg-[#0e8774]/20 p-6 rounded-lg text-center border border-[#75ccca]/30 hover:border-[#75ccca]/50 transition-colors">
-              <Zap className="text-[#75ccca] mx-auto mb-3" size={32} />
-              <h3 className="text-2xl font-bold text-white">19</h3>
-              <p className="text-white/70">Days to Build 3 Apps</p>
-            </div>
-            
-            <div className="bg-[#0e8774]/20 p-6 rounded-lg text-center border border-[#75ccca]/30 hover:border-[#75ccca]/50 transition-colors">
               <Code className="text-[#75ccca] mx-auto mb-3" size={32} />
-              <h3 className="text-2xl font-bold text-white">5</h3>
-              <p className="text-white/70">Apps Rebuilt from Scratch</p>
+              <h3 className="text-2xl font-bold text-white">6+</h3>
+              <p className="text-white/70">Enterprise Applications</p>
             </div>
-            
+
             <div className="bg-[#0e8774]/20 p-6 rounded-lg text-center border border-[#75ccca]/30 hover:border-[#75ccca]/50 transition-colors">
               <Target className="text-[#75ccca] mx-auto mb-3" size={32} />
-              <h3 className="text-2xl font-bold text-white">100%</h3>
-              <p className="text-white/70">Production Ready</p>
+              <h3 className="text-2xl font-bold text-white">3</h3>
+              <p className="text-white/70">Platforms (Web, iOS, Android)</p>
             </div>
-            
+
+            <div className="bg-[#0e8774]/20 p-6 rounded-lg text-center border border-[#75ccca]/30 hover:border-[#75ccca]/50 transition-colors">
+              <Zap className="text-[#75ccca] mx-auto mb-3" size={32} />
+              <h3 className="text-2xl font-bold text-white">Full-Stack</h3>
+              <p className="text-white/70">Development Expertise</p>
+            </div>
+
             <div className="bg-[#0e8774]/20 p-6 rounded-lg text-center border border-[#75ccca]/30 hover:border-[#75ccca]/50 transition-colors">
               <TrendingUp className="text-[#75ccca] mx-auto mb-3" size={32} />
               <h3 className="text-2xl font-bold text-white">150+</h3>
@@ -99,7 +99,7 @@ export default function About() {
           <div className="bg-[#0e8774]/20 border border-[#75ccca]/30 rounded-lg p-8 max-w-3xl mx-auto">
             <h3 className="text-2xl font-bold text-white mb-4">My Mission</h3>
             <p className="text-white text-lg">
-              To leverage my proven track record of delivering complex applications quickly and efficiently, bringing immediate value to a forward-thinking development team while building my career in Canada.
+              To deliver innovative, scalable software solutions that drive business growth and solve complex technical challenges. I bring expertise in full-stack development, modern frameworks, and cross-platform technologies to create applications that make a real impact.
             </p>
           </div>
         </motion.div>

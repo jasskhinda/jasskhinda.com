@@ -2,36 +2,41 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { ExternalLink, Star, Zap, Eye, Code2, Rocket, Smartphone, Github } from 'lucide-react'
+import { ExternalLink, Star, Zap, Eye, Code2, Rocket, Smartphone } from 'lucide-react'
 
 const webApps = [
   {
     name: 'Facility Portal',
     url: 'https://facility.compassionatecaretransportation.com/',
+    github: 'https://github.com/jasskhinda/facility_app',
     status: 'live',
     description: 'Healthcare facility management interface'
   },
   {
     name: 'Booking App',
     url: 'https://book.compassionatecaretransportation.com/',
+    github: 'https://github.com/jasskhinda/booking_app',
     status: 'live',
     description: 'Patient booking and scheduling system'
   },
   {
     name: 'Dispatcher Dashboard',
     url: 'https://dispatch.compassionatecaretransportation.com/',
+    github: 'https://github.com/jasskhinda/dispatcher_app',
     status: 'live',
     description: 'Real-time dispatch and routing control'
   },
   {
     name: 'Admin Panel',
     url: 'https://admin.compassionatecaretransportation.com/',
+    github: 'https://github.com/jasskhinda/admin_app',
     status: 'live',
     description: 'System administration and analytics'
   },
   {
     name: 'Driver App',
     url: 'https://driver.compassionatecaretransportation.com/',
+    github: 'https://github.com/jasskhinda/driver',
     status: 'live',
     description: 'Driver mobile application'
   },
@@ -40,6 +45,13 @@ const webApps = [
     url: 'https://ccapp.compassionatecaregivershc.com/',
     status: 'live',
     description: 'Healthcare management web portal'
+  },
+  {
+    name: 'WhatsTheRub',
+    url: 'https://whats-the-rub.vercel.app/',
+    github: 'https://github.com/jasskhinda/WhatsTheRub',
+    status: 'live',
+    description: 'Full-stack web application'
   }
 ]
 
@@ -77,7 +89,7 @@ const featuredProject = {
   image: '/api/placeholder/600/400',
   tech: ['Next.js', 'React.js', 'Flutter', 'Supabase', 'Tailwind CSS', 'MongoDB', 'Firebase'],
   stats: {
-    appsBuilt: 6,
+    appsBuilt: 7,
     platforms: 3,
     technologies: 7
   },
@@ -308,18 +320,33 @@ export default function ProjectShowcase() {
                       </p>
                     </div>
 
-                    <motion.a
-                      href={app.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="w-full bg-gradient-to-r from-[#75ccca] to-[#0e8774] hover:from-[#0e8774] hover:to-[#75ccca] text-white px-4 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all"
-                    >
-                      <Eye size={16} />
-                      View Live
-                      <ExternalLink size={14} />
-                    </motion.a>
+                    <div className="flex gap-2">
+                      <motion.a
+                        href={app.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex-1 bg-gradient-to-r from-[#75ccca] to-[#0e8774] hover:from-[#0e8774] hover:to-[#75ccca] text-white px-4 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all"
+                      >
+                        <Eye size={16} />
+                        Live
+                      </motion.a>
+
+                      {app.github && (
+                        <motion.a
+                          href={app.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="flex-1 bg-[#0e8774]/40 border border-[#75ccca]/50 hover:bg-[#0e8774]/60 text-white px-4 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all"
+                        >
+                          <Code2 size={16} />
+                          Code
+                        </motion.a>
+                      )}
+                    </div>
                   </motion.div>
                 ))}
               </div>

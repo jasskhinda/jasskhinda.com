@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jass Khinda - Full Stack Developer Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border: 2px solid #0e8774;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0e8774 0%, #75ccca 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            font-size: 0.9em;
+            margin-top: 15px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 0;
+        }
+
+        .main-column {
+            padding: 40px;
+            border-right: 2px solid #e0e0e0;
+        }
+
+        .sidebar {
+            padding: 40px 30px;
+            background: #f9f9f9;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #0e8774;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #75ccca;
+        }
+
+        .summary {
+            font-size: 1em;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .job {
+            margin-bottom: 30px;
+        }
+
+        .job-header {
+            margin-bottom: 12px;
+        }
+
+        .job-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 5px;
+        }
+
+        .job-meta {
+            color: #666;
+            font-size: 0.9em;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .job-description {
+            margin-left: 0;
+        }
+
+        .job-description li {
+            margin-bottom: 8px;
+            padding-left: 10px;
+            color: #444;
+        }
+
+        .achievement-highlight {
+            background: #f0f9f7;
+            border-left: 4px solid #0e8774;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .achievement-highlight strong {
+            color: #0e8774;
+        }
+
+        .project {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .project:last-child {
+            border-bottom: none;
+        }
+
+        .project-title {
+            font-weight: 700;
+            color: #0e8774;
+            margin-bottom: 5px;
+        }
+
+        .project-links {
+            font-size: 0.85em;
+            margin-top: 5px;
+        }
+
+        .project-links a {
+            color: #0e8774;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        .tech-category {
+            margin-bottom: 20px;
+        }
+
+        .tech-category-title {
+            font-weight: 700;
+            color: #0e8774;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .tech-list {
+            font-size: 0.9em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .cert-item, .strength-item {
+            font-size: 0.9em;
+            padding: 5px 0;
+            color: #555;
+        }
+
+        .cert-item::before, .strength-item::before {
+            content: "→ ";
+            color: #0e8774;
+            font-weight: bold;
+        }
+
+        .education-item {
+            margin-bottom: 15px;
+        }
+
+        .education-degree {
+            font-weight: 700;
+            color: #333;
+        }
+
+        .education-school {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .resume-container {
+                border: none;
+                box-shadow: none;
+            }
+
+            .header {
+                background: #0e8774 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .contact-info a {
+                color: white !important;
+            }
+
+            .content {
+                display: block;
+            }
+
+            .main-column {
+                border-right: none;
+            }
+
+            .sidebar {
+                background: white;
+            }
+
+            a {
+                text-decoration: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .main-column {
+                border-right: none;
+                border-bottom: 2px solid #e0e0e0;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .header .subtitle {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Jass Khinda</h1>
+            <div class="subtitle">Full Stack Developer | Web & Mobile App Specialist</div>
+            <div class="contact-info">
+                <span>📞 647-355-6441</span>
+                <span>✉️ <a href="mailto:info@jasskhinda.com">info@jasskhinda.com</a></span>
+                <span>🌐 <a href="https://jasskhinda.com" target="_blank">jasskhinda.com</a></span>
+                <span>💼 <a href="https://linkedin.com/in/jasskhinda" target="_blank">linkedin.com/in/jasskhinda</a></span>
+                <span>💻 <a href="https://github.com/jasskhinda" target="_blank">github.com/jasskhinda</a></span>
+                <span>📍 Brampton, ON, Canada</span>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Main Column -->
+            <div class="main-column">
+                <!-- Professional Summary -->
+                <div class="section">
+                    <h2 class="section-title">PROFESSIONAL SUMMARY</h2>
+                    <p class="summary">
+                        Enterprise Full Stack Developer with 8+ years of experience building scalable web and mobile applications across healthcare, e-commerce, and transportation sectors. Successfully delivered 7+ production applications including cross-platform mobile apps (iOS, Android, Web) and complex multi-tenant systems. Specialized in modern tech stacks including Flutter, React, Next.js, Supabase, and Firebase. Proven expertise in real-time systems, API development, database architecture, and cloud deployment. Delivered 200+ WordPress websites and managed enterprise-level digital marketing campaigns. Strong focus on translating business requirements into robust technical solutions that drive measurable results.
+                    </p>
+                </div>
+
+                <!-- Work Experience -->
+                <div class="section">
+                    <h2 class="section-title">WORK EXPERIENCE</h2>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-title">Full Stack Mobile & Web Developer</div>
+                            <div class="job-meta">2023 - Present | Compassionate Caregivers, US</div>
+                        </div>
+                        <ul class="job-description">
+                            <li><strong>Enterprise Healthcare Transportation Platform:</strong> Architected and deployed 7-application ecosystem using Next.js, Supabase, TypeScript featuring Facility Portal, Booking App, Dispatcher Dashboard, Admin Panel, and Driver App with real-time synchronization</li>
+                            <li><strong>Cross-Platform Mobile Development:</strong> Built comprehensive caregiver training platform using Flutter deployed on Google Play Store, Apple App Store, and web with Firebase backend</li>
+                            <li><strong>Advanced Features Implementation:</strong> Developed real-time GPS tracking, dynamic pricing engine, automated invoicing, role-based access control, multi-tenant architecture, exam management system, and video content delivery</li>
+                            <li><strong>Caregiver Training Platform:</strong> Built enterprise training system with admin-managed exam creation, video streaming (public/private), real-time group & private chat, night shift monitoring with automated alerts, and staff progress tracking</li>
+                            <li><strong>Database Architecture:</strong> Designed and implemented complex database schemas with real-time updates, ensuring data integrity across multiple interconnected applications</li>
+                            <li><strong>Performance Optimization:</strong> Reduced booking time by 75% through efficient algorithms and optimized data handling</li>
+                        </ul>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-title">Full Stack Developer (Part-time)</div>
+                            <div class="job-meta">2024 - Present | KFresh Super Market, Canada</div>
+                        </div>
+                        <ul class="job-description">
+                            <li><strong>E-commerce Platform Development:</strong> Built full-stack marketplace using Next.js, Supabase, TypeScript with customer storefront and comprehensive admin dashboard</li>
+                            <li><strong>Custom Business Logic:</strong> Developed specialized features for Afro-Caribbean marketplace including inventory management, order processing, and customer relationship portal</li>
+                            <li><strong>Admin Dashboard:</strong> Created enterprise-grade dashboard for product management, sales analytics, and real-time reporting</li>
+                            <li><strong>Payment Integration:</strong> Implemented secure payment processing and order management systems</li>
+                        </ul>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-title">Senior Web Developer & Digital Marketing Specialist</div>
+                            <div class="job-meta">2016 - 2023 | Ineffable Design, US</div>
+                        </div>
+                        <ul class="job-description">
+                            <li><strong>High-Volume Development:</strong> Built and deployed 200+ professional WordPress websites across various industries over 7+ years</li>
+                            <li><strong>Digital Marketing Campaigns:</strong> Managed Google Ads campaigns for multiple clients achieving improved ROI and lead generation</li>
+                            <li><strong>SEO Optimization:</strong> Implemented comprehensive SEO strategies resulting in improved search rankings for dozens of client websites</li>
+                            <li><strong>Client Relationship Management:</strong> Maintained long-term partnerships with key clients, leading to referrals and expanded project scope</li>
+                            <li><strong>Team Leadership:</strong> Collaborated with design and marketing teams to deliver integrated solutions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Key Projects -->
+                <div class="section">
+                    <h2 class="section-title">KEY PROJECTS & ACHIEVEMENTS</h2>
+
+                    <div class="achievement-highlight">
+                        <strong>🚀 Portfolio Achievement:</strong> Successfully delivered 8+ production applications across web and mobile platforms, including cross-platform mobile app on iOS, Android, and Web, plus 7 interconnected web applications serving healthcare and transportation industries.
+                    </div>
+
+                    <div class="project">
+                        <div class="project-title">Compassionate Caregivers Training Platform</div>
+                        <p>Enterprise caregiver training system with exam management, video content delivery, real-time chat (group & private), night shift monitoring with automated alerts, and comprehensive staff progress tracking. Built with Flutter for cross-platform deployment (iOS, Android, Web) with Firebase backend.</p>
+                        <div class="project-links">
+                            <a href="https://play.google.com/store/apps/details?id=com.compassionate.caregiver" target="_blank">→ Google Play</a>
+                            <a href="https://apps.apple.com/us/app/compassionate-caregivers-app/id6751550773" target="_blank">→ App Store</a>
+                            <a href="https://ccapp.compassionatecaregivershc.com/" target="_blank">→ Web App</a>
+                            <a href="https://github.com/jasskhinda/compassionate-caregivers-app" target="_blank">→ GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-title">Healthcare Transportation Ecosystem (7 Applications)</div>
+                        <p>Comprehensive multi-tenant transportation management system with real-time synchronization across all applications. Features include dynamic pricing, automated invoicing, GPS tracking, trip management, and enterprise admin controls.</p>
+                        <ul style="margin-top: 10px; margin-left: 20px; font-size: 0.9em;">
+                            <li><strong>Facility Portal:</strong> Multi-tenant management with automated billing</li>
+                            <li><strong>Booking App:</strong> Dynamic pricing engine with real-time cost calculation</li>
+                            <li><strong>Dispatcher Dashboard:</strong> Real-time GPS tracking and trip management</li>
+                            <li><strong>Admin Panel:</strong> System-wide configuration and analytics</li>
+                            <li><strong>Driver App:</strong> Trip acceptance with real-time location sharing</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://facility.compassionatecaretransportation.com/" target="_blank">→ Facility Portal</a>
+                            <a href="https://book.compassionatecaretransportation.com/" target="_blank">→ Booking App</a>
+                            <a href="https://dispatch.compassionatecaretransportation.com/" target="_blank">→ Dispatcher</a>
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-title">KFresh E-commerce Platform</div>
+                        <p>Full-stack marketplace with customer storefront and admin dashboard using Next.js, Supabase, TypeScript. Features inventory management, order processing, and payment integration.</p>
+                        <div class="project-links">
+                            <a href="http://kfresh.ca/" target="_blank">→ Live Site</a>
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-title">WhatsTheRub</div>
+                        <p>Full-stack web application with modern UI/UX built with Next.js and React.</p>
+                        <div class="project-links">
+                            <a href="https://whats-the-rub.vercel.app/" target="_blank">→ Live App</a>
+                            <a href="https://github.com/jasskhinda/WhatsTheRub" target="_blank">→ GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="project">
+                        <div class="project-title">Website Portfolio</div>
+                        <p>Successfully delivered 200+ WordPress websites across healthcare, e-commerce, agriculture, and service industries with custom themes, plugins, and SEO optimization.</p>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="section">
+                    <h2 class="section-title">EDUCATION</h2>
+                    <div class="education-item">
+                        <div class="education-degree">Computer Software and Database Development (CSDD)</div>
+                        <div class="education-school">Loyalist College, Toronto</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-degree">B.C.A (Bachelor of Computer Applications)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Technical Skills -->
+                <div class="section">
+                    <h2 class="section-title">TECHNICAL SKILLS</h2>
+
+                    <div class="tech-category">
+                        <div class="tech-category-title">Mobile Development:</div>
+                        <div class="tech-list">Flutter, React Native, Cross-platform Apps, App Store Deployment, Mobile UI/UX</div>
+                    </div>
+
+                    <div class="tech-category">
+                        <div class="tech-category-title">Frontend:</div>
+                        <div class="tech-list">JavaScript, TypeScript, React.js, Next.js, HTML5/CSS3, Tailwind CSS, Bootstrap</div>
+                    </div>
+
+                    <div class="tech-category">
+                        <div class="tech-category-title">Backend & Database:</div>
+                        <div class="tech-list">Firebase, Supabase, MongoDB, Node.js, API Development, Real-time Systems</div>
+                    </div>
+
+                    <div class="tech-category">
+                        <div class="tech-category-title">CMS & E-commerce:</div>
+                        <div class="tech-list">WordPress, Shopify, WooCommerce, Custom Themes</div>
+                    </div>
+
+                    <div class="tech-category">
+                        <div class="tech-category-title">Development Tools:</div>
+                        <div class="tech-list">VS Code, Git/GitHub, Docker, Vercel, AI Development Tools</div>
+                    </div>
+
+                    <div class="tech-category">
+                        <div class="tech-category-title">Digital Marketing:</div>
+                        <div class="tech-list">Google Ads, SEO, Social Media Marketing, Analytics</div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="section">
+                    <h2 class="section-title">CERTIFICATIONS</h2>
+                    <div class="cert-item">Google AI Essentials by Google</div>
+                    <div class="cert-item">Meta Full Stack Web Development</div>
+                    <div class="cert-item">Meta Full Stack App Development</div>
+                    <div class="cert-item">WordPress Master Training</div>
+                    <div class="cert-item">Digital Marketing by Semrush</div>
+                    <div class="cert-item">Google Ads Advanced Strategies</div>
+                </div>
+
+                <!-- Professional Strengths -->
+                <div class="section">
+                    <h2 class="section-title">CORE STRENGTHS</h2>
+                    <div class="strength-item">Enterprise Architecture</div>
+                    <div class="strength-item">Full-Stack Versatility</div>
+                    <div class="strength-item">Real-time Systems</div>
+                    <div class="strength-item">Cross-Platform Development</div>
+                    <div class="strength-item">Database Design</div>
+                    <div class="strength-item">API Development</div>
+                    <div class="strength-item">Client Communication</div>
+                    <div class="strength-item">Rapid Problem Solving</div>
+                    <div class="strength-item">AI-Enhanced Development</div>
+                </div>
+
+                <!-- Reference -->
+                <div class="section">
+                    <h2 class="section-title">REFERENCE</h2>
+                    <p style="font-size: 0.9em; color: #666;">Available upon request</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add print button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add keyboard shortcut for printing (Ctrl/Cmd + P)
+            document.addEventListener('keydown', function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                    e.preventDefault();
+                    window.print();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,155 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useState } from 'react'
-import { Mail, Phone, MapPin, Calendar, Linkedin, Github, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react'
-
-function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
-  const [errorMessage, setErrorMessage] = useState('')
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setStatus('loading')
-    setErrorMessage('')
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      })
-
-      const result = await response.json()
-
-      if (response.ok) {
-        setStatus('success')
-        setFormData({ name: '', email: '', message: '' })
-      } else {
-        setStatus('error')
-        setErrorMessage(result.error || 'Failed to send message')
-      }
-    } catch {
-      setStatus('error')
-      setErrorMessage('Network error. Please try again.')
-    }
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }))
-  }
-
-  if (status === 'success') {
-    return (
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="bg-blue-500/10 border border-blue-400/30 rounded-lg p-6 text-center"
-      >
-        <CheckCircle className="text-blue-400 mx-auto mb-4" size={48} />
-        <h3 className="text-xl font-semibold text-white mb-2">Message Sent!</h3>
-        <p className="text-white mb-4">Thank you for reaching out. I&apos;ll get back to you soon!</p>
-        <button
-          onClick={() => setStatus('idle')}
-          className="text-blue-400 hover:text-indigo-600 underline"
-        >
-          Send another message
-        </button>
-      </motion.div>
-    )
-  }
-
-  return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div>
-        <label htmlFor="name" className="block text-white mb-2 font-medium">
-          Your Name *
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-          value={formData.name}
-          onChange={handleChange}
-          className="w-full bg-indigo-600/20 border border-blue-400/30 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-blue-400 focus:outline-none transition-colors"
-          placeholder="Enter your full name"
-        />
-      </div>
-
-      <div>
-        <label htmlFor="email" className="block text-white mb-2 font-medium">
-          Email Address *
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          value={formData.email}
-          onChange={handleChange}
-          className="w-full bg-indigo-600/20 border border-blue-400/30 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-blue-400 focus:outline-none transition-colors"
-          placeholder="your.email@company.com"
-        />
-      </div>
-
-      <div>
-        <label htmlFor="message" className="block text-white mb-2 font-medium">
-          Message *
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          required
-          rows={5}
-          value={formData.message}
-          onChange={handleChange}
-          className="w-full bg-indigo-600/20 border border-blue-400/30 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-blue-400 focus:outline-none transition-colors resize-none"
-          placeholder="Tell me about the opportunity, your project, or what you'd like to discuss..."
-        />
-      </div>
-
-      {status === 'error' && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-indigo-600/10 border border-indigo-500/30 rounded-lg p-4 flex items-center gap-3"
-        >
-          <AlertCircle className="text-blue-400" size={20} />
-          <p className="text-white">{errorMessage}</p>
-        </motion.div>
-      )}
-
-      <motion.button
-        type="submit"
-        disabled={status === 'loading'}
-        whileHover={{ scale: status === 'loading' ? 1 : 1.02 }}
-        whileTap={{ scale: 0.98 }}
-        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-indigo-600 disabled:from-blue-600/50 disabled:to-purple-600/50 text-white px-8 py-4 rounded-lg font-medium transition-all flex items-center justify-center gap-3"
-      >
-        {status === 'loading' ? (
-          <>
-            <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-            Sending...
-          </>
-        ) : (
-          <>
-            <Send size={20} />
-            Send Message
-          </>
-        )}
-      </motion.button>
-    </form>
-  )
-}
+import { Mail, Phone, MapPin, Calendar, Linkedin, Github, Clock, MessageCircle } from 'lucide-react'
 
 export default function Contact() {
   return (
@@ -256,6 +108,37 @@ export default function Contact() {
                   </div>
                 </a>
               </div>
+
+              <div className="mt-8">
+                <h4 className="text-xl font-semibold text-white mb-4">Quick Contact</h4>
+                <div className="grid grid-cols-1 gap-3">
+                  <a
+                    href="https://wa.me/16473556441"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-3 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-600 text-white px-6 py-4 rounded-lg font-medium transition-all shadow-lg"
+                  >
+                    <MessageCircle size={20} />
+                    Chat on WhatsApp
+                  </a>
+
+                  <a
+                    href="sms:6473556441"
+                    className="flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-indigo-600 text-white px-6 py-4 rounded-lg font-medium transition-all shadow-lg"
+                  >
+                    <MessageCircle size={20} />
+                    Text (647) 355-6441
+                  </a>
+
+                  <a
+                    href="tel:6473556441"
+                    className="flex items-center justify-center gap-3 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-blue-600 hover:to-purple-600 text-white px-6 py-4 rounded-lg font-medium transition-all shadow-lg"
+                  >
+                    <Phone size={20} />
+                    Call (647) 355-6441
+                  </a>
+                </div>
+              </div>
             </div>
           </motion.div>
 
@@ -273,7 +156,7 @@ export default function Contact() {
                 <div>
                   <h4 className="text-lg font-semibold text-white mb-2">Proven Track Record</h4>
                   <p className="text-white">
-                    I deliver where others can&apos;t. Completed 3 complex healthcare apps in 19 days that stumped 2 developers for 3 years.
+                    Successfully delivered 8+ production applications including cross-platform mobile apps and enterprise web systems with real-time capabilities.
                   </p>
                 </div>
               </div>
@@ -309,11 +192,6 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Contact Form */}
-            <div className="mt-8">
-              <h4 className="text-xl font-semibold text-white mb-6">Send a Message</h4>
-              <ContactForm />
-            </div>
           </motion.div>
         </div>
 

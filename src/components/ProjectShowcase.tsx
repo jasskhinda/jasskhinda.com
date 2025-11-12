@@ -27,7 +27,7 @@ const webApps = [
     github: 'https://github.com/jasskhinda/dispatcher_app',
     status: 'live',
     description: 'Real-time dispatch control with live driver tracking, trip management, and route optimization',
-    tech: ['Real-time GPS', 'Live updates', 'Trip approval workflow']
+    tech: ['.NET', 'C#', 'Real-time GPS', 'Live updates', 'Trip approval workflow']
   },
   {
     name: 'Admin Panel',

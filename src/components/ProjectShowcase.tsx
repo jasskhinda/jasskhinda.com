@@ -96,17 +96,17 @@ const mobileApps = [
     tech: ['Flutter', 'React Native', 'Stripe', 'Real-time Updates', 'Push Notifications'],
     platforms: [
       {
-        name: 'Android',
-        url: '#',
-        icon: 'Android'
-      },
-      {
         name: 'iOS',
         url: 'https://apps.apple.com/ca/app/cct-facility-portal/id6754805955',
         icon: 'Apple'
+      },
+      {
+        name: 'Android',
+        url: '#',
+        icon: 'Android'
       }
     ],
-    github: 'https://github.com/jasskhinda/facility_app',
+    github: 'https://github.com/jasskhinda/facility_app_mobile_ios_android',
     features: [
       'Effortless trip booking with real-time pricing',
       'Client management & roster tracking',

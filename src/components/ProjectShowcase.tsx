@@ -89,6 +89,32 @@ const mobileApps = [
       'Staff progress tracking & content delivery',
       'Cross-platform (iOS, Android, Web)'
     ]
+  },
+  {
+    name: 'CCT Facility Portal',
+    description: 'Healthcare facility transportation management system designed for seamless coordination with the CCT transportation network including dispatchers, drivers, and billing systems',
+    tech: ['Flutter', 'React Native', 'Stripe', 'Real-time Updates', 'Push Notifications'],
+    platforms: [
+      {
+        name: 'Android',
+        url: '#',
+        icon: 'Android'
+      },
+      {
+        name: 'iOS',
+        url: 'https://apps.apple.com/ca/app/cct-facility-portal/id6754805955',
+        icon: 'Apple'
+      }
+    ],
+    github: 'https://github.com/jasskhinda/facility_app',
+    features: [
+      'Effortless trip booking with real-time pricing',
+      'Client management & roster tracking',
+      'Real-time trip tracking with driver assignments',
+      'Direct messaging with dispatch team',
+      'Comprehensive billing & invoice tracking',
+      'Dashboard insights & statistics'
+    ]
   }
 ]
 

@@ -157,7 +157,7 @@ export default function CreativeHero() {
                 🏆 Enterprise Healthcare Platform Development
               </p>
               <p className="text-white">
-                6+ Production Applications • Web, iOS & Android • Modern Tech Stack
+                50+ Full Stack Web Apps • 15+ Full Stack Mobile Apps (iOS & Android)
               </p>
             </motion.div>
           </motion.div>

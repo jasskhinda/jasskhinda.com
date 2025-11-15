@@ -89,6 +89,27 @@ const mobileApps = [
       'Staff progress tracking & content delivery',
       'Cross-platform (iOS, Android, Web)'
     ]
+  },
+  {
+    name: 'Facility Portal',
+    description: 'Mobile facility management app for healthcare transportation with automated invoicing, client management, and real-time trip scheduling',
+    tech: ['Flutter', 'Firebase', 'Real-time Database', 'Push Notifications'],
+    platforms: [
+      {
+        name: 'Android',
+        url: 'https://play.google.com/store/apps/details?id=com.compassionatecare.facilityappportal',
+        icon: 'Android'
+      }
+    ],
+    github: 'https://github.com/jasskhinda/facility_app',
+    features: [
+      'Multi-tenant facility management',
+      'Automated billing & invoicing',
+      'Real-time trip scheduling',
+      'Client management system',
+      'Role-based access control',
+      'Live on Google Play Store'
+    ]
   }
 ]
 

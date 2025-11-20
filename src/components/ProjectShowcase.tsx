@@ -115,6 +115,32 @@ const mobileApps = [
       'Comprehensive billing & invoice tracking',
       'Dashboard insights & statistics'
     ]
+  },
+  {
+    name: 'CCT Booking Portal',
+    description: 'Patient-focused transportation booking platform with dynamic pricing engine, real-time cost calculation, and automated trip scheduling for healthcare facilities',
+    tech: ['Flutter', 'React Native', 'Stripe', 'Dynamic Pricing', 'Real-time Updates'],
+    platforms: [
+      {
+        name: 'iOS',
+        url: 'https://apps.apple.com/ca/app/cct-booking-portal/id6755318073',
+        icon: 'Apple'
+      },
+      {
+        name: 'Android',
+        url: 'https://play.google.com/store/apps/details?id=com.compassionatecare.bookingportal',
+        icon: 'Android'
+      }
+    ],
+    github: 'https://github.com/jasskhinda/CCT_booking_IOS_ANDROID',
+    features: [
+      'Dynamic pricing with real-time cost calculation',
+      'Automated trip scheduling & booking',
+      'Secure payment integration with Stripe',
+      'Trip history & management',
+      'Real-time availability updates',
+      'Cross-platform (iOS & Android)'
+    ]
   }
 ]
 

@@ -66,7 +66,7 @@ export default function About() {
           >
             <div className="bg-indigo-600/20 p-6 rounded-lg text-center border border-blue-400/30 hover:border-blue-400/50 transition-colors">
               <Code className="text-blue-400 mx-auto mb-3" size={32} />
-              <h3 className="text-2xl font-bold text-white">6+</h3>
+              <h3 className="text-2xl font-bold text-white">8+</h3>
               <p className="text-white/70">Enterprise Applications</p>
             </div>
 

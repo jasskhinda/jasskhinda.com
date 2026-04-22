@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { ExternalLink, Star, Zap, Eye, Code2, Rocket, Smartphone } from 'lucide-react'
+import { ExternalLink, Star, Zap, Eye, Code2, Rocket, Smartphone, Hammer, BookOpen, Shield } from 'lucide-react'
 
 const webApps = [
   {
@@ -140,6 +140,61 @@ const mobileApps = [
       'Trip history & management',
       'Real-time availability updates',
       'Cross-platform (iOS & Android)'
+    ]
+  }
+]
+
+const latestBuilds = [
+  {
+    name: 'AnyTradesmen',
+    tagline: 'Service Marketplace Platform',
+    description: 'A modern marketplace connecting homeowners with verified tradesmen for home services. A reimagined take on HomeAdvisor — faster, cleaner, and built around real workflows for both customers and admins.',
+    icon: Hammer,
+    accent: 'from-orange-500/20 to-amber-600/20',
+    border: 'border-orange-400/40',
+    iconColor: 'text-orange-400',
+    tech: ['Next.js', 'React', 'Tailwind CSS', 'Supabase', 'Real-time', 'Auth'],
+    features: [
+      'Verified tradesmen directory with profiles',
+      'Service request & lead management',
+      'Admin moderation & dispute tools',
+      'Real-time notifications',
+      'Role-based access (customer / tradesman / admin)'
+    ],
+    apps: [
+      {
+        name: 'Customer Portal',
+        url: 'https://anytradesmen.com/',
+        role: 'Public marketplace'
+      },
+      {
+        name: 'Admin Dashboard',
+        url: 'https://admin.anytradesmen.com/',
+        role: 'Operations & moderation'
+      }
+    ]
+  },
+  {
+    name: 'CheatSheet',
+    tagline: 'Knowledge & Reference App',
+    description: 'A live, searchable knowledge platform that turns scattered notes, snippets, and reference material into a fast, organized cheat sheet you can pull up anywhere.',
+    icon: BookOpen,
+    accent: 'from-emerald-500/20 to-teal-600/20',
+    border: 'border-emerald-400/40',
+    iconColor: 'text-emerald-400',
+    tech: ['Next.js', 'React', 'Tailwind CSS', 'Real-time Search'],
+    features: [
+      'Fast full-text search across content',
+      'Organized categories & tags',
+      'Clean, distraction-free reading UI',
+      'Responsive across desktop & mobile'
+    ],
+    apps: [
+      {
+        name: 'Live App',
+        url: 'https://www.cheatsheet.live/',
+        role: 'Public web app'
+      }
     ]
   }
 ]
@@ -538,6 +593,114 @@ export default function ProjectShowcase() {
                 ))}
               </div>
             </div>
+          </div>
+        </motion.div>
+
+        {/* Latest Builds */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mb-20"
+        >
+          <div className="text-center mb-10">
+            <motion.h3
+              className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-pink-500 to-emerald-400 mb-3"
+              animate={{ backgroundPosition: ['0%', '100%', '0%'] }}
+              transition={{ duration: 5, repeat: Infinity }}
+              style={{ backgroundSize: '200% 200%' }}
+            >
+              Latest Builds
+            </motion.h3>
+            <p className="text-lg text-white/80">
+              Freshly shipped • Production live
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            {latestBuilds.map((project, index) => {
+              const Icon = project.icon
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.15 }}
+                  whileHover={{ scale: 1.02 }}
+                  className={`bg-gradient-to-br ${project.accent} backdrop-blur-md rounded-2xl p-8 border-2 ${project.border} hover:shadow-2xl transition-all relative overflow-hidden`}
+                >
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className={`p-3 rounded-xl bg-white/5 border border-white/10 ${project.iconColor}`}>
+                      <Icon size={32} />
+                    </div>
+                    <div>
+                      <h4 className="text-2xl md:text-3xl font-bold text-white">{project.name}</h4>
+                      <p className={`text-sm font-semibold ${project.iconColor}`}>{project.tagline}</p>
+                    </div>
+                  </div>
+
+                  <p className="text-white/85 leading-relaxed mb-6">
+                    {project.description}
+                  </p>
+
+                  {/* Apps / Live Links */}
+                  <div className="space-y-3 mb-6">
+                    {project.apps.map((app, aIndex) => (
+                      <motion.a
+                        key={aIndex}
+                        href={app.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="flex items-center justify-between bg-black/30 hover:bg-black/40 border border-white/10 hover:border-white/20 rounded-lg px-4 py-3 transition-all group"
+                      >
+                        <div className="flex items-center gap-3">
+                          {app.name === 'Admin Dashboard' ? (
+                            <Shield size={18} className={project.iconColor} />
+                          ) : (
+                            <Eye size={18} className={project.iconColor} />
+                          )}
+                          <div>
+                            <div className="text-white font-semibold text-sm">{app.name}</div>
+                            <div className="text-white/60 text-xs">{app.role}</div>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2 text-white/70 group-hover:text-white">
+                          <span className="text-xs hidden sm:inline">Visit</span>
+                          <ExternalLink size={16} />
+                        </div>
+                      </motion.a>
+                    ))}
+                  </div>
+
+                  {/* Features */}
+                  <div className="mb-6">
+                    <h5 className="text-white font-semibold text-sm mb-3 uppercase tracking-wider">Highlights</h5>
+                    <div className="space-y-1.5">
+                      {project.features.map((feature, fIndex) => (
+                        <div key={fIndex} className="flex items-start gap-2 text-white/85">
+                          <div className={`w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 ${project.iconColor.replace('text-', 'bg-')}`} />
+                          <span className="text-sm">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Tech */}
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="bg-white/10 text-white/90 px-3 py-1 rounded-full text-xs font-medium border border-white/15"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              )
+            })}
           </div>
         </motion.div>
 

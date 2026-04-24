@@ -8,7 +8,7 @@ const webApps = [
   {
     name: 'Facility Portal',
     url: 'https://facility.compassionatecaretransportation.com/',
-    github: 'https://github.com/jasskhinda/facility_app',
+    github: 'https://github.com/jasskhinda',
     status: 'live',
     description: 'Multi-tenant facility management with automated invoicing, client management, and trip scheduling',
     tech: ['Real-time updates', 'Role-based access', 'Automated billing']
@@ -16,7 +16,7 @@ const webApps = [
   {
     name: 'Booking App',
     url: 'https://book.compassionatecaretransportation.com/',
-    github: 'https://github.com/jasskhinda/booking_app',
+    github: 'https://github.com/jasskhinda',
     status: 'live',
     description: 'Dynamic pricing engine with real-time cost calculation and automated trip scheduling',
     tech: ['Cost optimization', 'Payment integration', 'Trip management']
@@ -24,7 +24,7 @@ const webApps = [
   {
     name: 'Dispatcher Dashboard',
     url: 'https://dispatch.compassionatecaretransportation.com/',
-    github: 'https://github.com/jasskhinda/dispatcher_app',
+    github: 'https://github.com/jasskhinda',
     status: 'live',
     description: 'Real-time dispatch control with live driver tracking, trip management, and route optimization',
     tech: ['.NET', 'C#', 'Real-time GPS', 'Live updates', 'Trip approval workflow']
@@ -32,7 +32,7 @@ const webApps = [
   {
     name: 'Admin Panel',
     url: 'https://admin.compassionatecaretransportation.com/',
-    github: 'https://github.com/jasskhinda/admin_app',
+    github: 'https://github.com/jasskhinda',
     status: 'live',
     description: 'Enterprise admin dashboard with user management, analytics, and system-wide configuration',
     tech: ['User management', 'Analytics', 'System configuration']
@@ -40,7 +40,7 @@ const webApps = [
   {
     name: 'Driver App',
     url: 'https://driver.compassionatecaretransportation.com/',
-    github: 'https://github.com/jasskhinda/driver',
+    github: 'https://github.com/jasskhinda',
     status: 'live',
     description: 'Driver interface with trip acceptance, real-time location sharing, and status updates',
     tech: ['GPS tracking', 'Push notifications', 'Trip management']
@@ -48,7 +48,7 @@ const webApps = [
   {
     name: 'Compassionate Caregivers Web Portal',
     url: 'https://ccapp.compassionatecaregivershc.com/',
-    github: 'https://github.com/jasskhinda/compassionate-caregivers-app',
+    github: 'https://github.com/jasskhinda',
     status: 'live',
     description: 'Comprehensive caregiver training platform with exam management, video content delivery, real-time chat, and night shift monitoring system',
     tech: ['Video streaming', 'Real-time chat', 'Exam system', 'Alert system']
@@ -56,7 +56,7 @@ const webApps = [
   {
     name: 'WhatsTheRub',
     url: 'https://whats-the-rub.vercel.app/',
-    github: 'https://github.com/jasskhinda/WhatsTheRub',
+    github: 'https://github.com/jasskhinda',
     status: 'live',
     description: 'Full-stack web application with modern UI/UX',
     tech: ['Next.js', 'React', 'Modern stack']
@@ -80,7 +80,7 @@ const mobileApps = [
         icon: 'Apple'
       }
     ],
-    github: 'https://github.com/jasskhinda/compassionate-caregivers-app',
+    github: 'https://github.com/jasskhinda',
     features: [
       'Admin-managed exam creation & caregiver testing',
       'Video content management (public/private sharing)',
@@ -106,7 +106,7 @@ const mobileApps = [
         icon: 'Android'
       }
     ],
-    github: 'https://github.com/jasskhinda/facility_app_mobile_ios_android',
+    github: 'https://github.com/jasskhinda',
     features: [
       'Effortless trip booking with real-time pricing',
       'Client management & roster tracking',
@@ -132,13 +132,143 @@ const mobileApps = [
         icon: 'Android'
       }
     ],
-    github: 'https://github.com/jasskhinda/CCT_booking_IOS_ANDROID',
+    github: 'https://github.com/jasskhinda',
     features: [
       'Dynamic pricing with real-time cost calculation',
       'Automated trip scheduling & booking',
       'Secure payment integration with Stripe',
       'Trip history & management',
       'Real-time availability updates',
+      'Cross-platform (iOS & Android)'
+    ]
+  },
+  {
+    name: 'CCT Driver Portal',
+    description: 'Driver-side mobile app — exactly like Uber, but purpose-built for healthcare transportation. Real-time trip assignments, live GPS navigation, and instant status updates for drivers on the road.',
+    tech: ['Flutter', 'React Native', 'Real-time GPS', 'Push Notifications', 'Firebase'],
+    platforms: [
+      {
+        name: 'iOS',
+        url: 'https://apps.apple.com/ca/app/cct-driver-portal/id6756082956',
+        icon: 'Apple'
+      },
+      {
+        name: 'Android',
+        url: 'https://play.google.com/store/apps/details?id=com.compassionatecare.driverapp',
+        icon: 'Android'
+      }
+    ],
+    github: 'https://github.com/jasskhinda',
+    features: [
+      'Uber-style trip acceptance & dispatch flow',
+      'Live GPS tracking & turn-by-turn navigation',
+      'Real-time status updates (arrived, picked up, dropped off)',
+      'Driver earnings & trip history',
+      'In-app messaging with dispatch',
+      'Cross-platform (iOS & Android)'
+    ]
+  },
+  {
+    name: 'CCT Dispatch Portal',
+    description: 'Mobile dispatch command center with live driver tracking, trip assignment, and approval workflows — full dispatch power from your phone.',
+    tech: ['Flutter', 'React Native', 'Real-time GPS', 'Live Maps', 'Push Notifications'],
+    platforms: [
+      {
+        name: 'iOS',
+        url: 'https://apps.apple.com/ca/app/cct-dispatcher-portal/id6756072945',
+        icon: 'Apple'
+      },
+      {
+        name: 'Android',
+        url: 'https://play.google.com/store/apps/details?id=com.compassionatecare.dispatcher',
+        icon: 'Android'
+      }
+    ],
+    github: 'https://github.com/jasskhinda',
+    features: [
+      'Live fleet tracking on interactive map',
+      'Trip assignment & driver matching',
+      'Trip approval workflow on the go',
+      'Real-time driver & facility messaging',
+      'Incident & status alerts',
+      'Cross-platform (iOS & Android)'
+    ]
+  },
+  {
+    name: 'CCT Admin Portal',
+    description: 'Mobile administration for the entire CCT ecosystem — user management, analytics, and system-wide configuration from anywhere.',
+    tech: ['Flutter', 'React Native', 'Role-based Access', 'Analytics', 'Firebase'],
+    platforms: [
+      {
+        name: 'iOS',
+        url: 'https://apps.apple.com/ca/app/cct-admin-portal/id6756191483',
+        icon: 'Apple'
+      },
+      {
+        name: 'Android',
+        url: 'https://play.google.com/store/apps/details?id=com.compassionatecare.admin',
+        icon: 'Android'
+      }
+    ],
+    github: 'https://github.com/jasskhinda',
+    features: [
+      'User & role management across the ecosystem',
+      'Live analytics & KPI dashboards',
+      'System-wide configuration controls',
+      'Audit trail & activity logs',
+      'Push alerts for critical events',
+      'Cross-platform (iOS & Android)'
+    ]
+  },
+  {
+    name: 'Happy Inline — Customer',
+    description: 'Like Booksy, but reimagined as your own personal app for your favorite places and businesses. Discover, book, and stay connected with the spots you love.',
+    tech: ['Flutter', 'React Native', 'Real-time Booking', 'Push Notifications', 'Firebase'],
+    platforms: [
+      {
+        name: 'iOS',
+        url: 'https://apps.apple.com/ca/app/happy-inline/id6756240306',
+        icon: 'Apple'
+      },
+      {
+        name: 'Android',
+        url: 'https://play.google.com/store/apps/details?id=com.happyinline.app',
+        icon: 'Android'
+      }
+    ],
+    github: 'https://github.com/jasskhinda',
+    features: [
+      'Personalized favorites-first experience',
+      'Real-time booking & availability',
+      'In-app notifications from your businesses',
+      'Booking history & upcoming appointments',
+      'Discover nearby places you\'ll love',
+      'Cross-platform (iOS & Android)'
+    ]
+  },
+  {
+    name: 'Happy Inline — Business',
+    description: 'The provider side of the Happy Inline ecosystem. Manage your bookings, calendar, and customer relationships for the people who love your business.',
+    tech: ['Flutter', 'React Native', 'Calendar Sync', 'Push Notifications', 'Firebase'],
+    platforms: [
+      {
+        name: 'iOS',
+        url: 'https://apps.apple.com/ca/app/happy-inline-business/id6760150083',
+        icon: 'Apple'
+      },
+      {
+        name: 'Android',
+        url: 'https://play.google.com/store/apps/details?id=com.happyinline.provider',
+        icon: 'Android'
+      }
+    ],
+    github: 'https://github.com/jasskhinda',
+    features: [
+      'Manage bookings & real-time availability',
+      'Integrated calendar & schedule view',
+      'Customer roster & repeat-visit tracking',
+      'Direct messaging with customers',
+      'Earnings & performance insights',
       'Cross-platform (iOS & Android)'
     ]
   }
@@ -206,7 +336,7 @@ const featuredProject = {
   image: '/api/placeholder/600/400',
   tech: ['Next.js', 'React.js', 'Flutter', 'Supabase', 'Tailwind CSS', 'MongoDB', 'Firebase'],
   stats: {
-    appsBuilt: 7,
+    appsBuilt: 10,
     platforms: 3,
     technologies: 7
   },

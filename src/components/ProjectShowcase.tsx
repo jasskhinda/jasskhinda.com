@@ -324,6 +324,11 @@ const latestBuilds = [
         name: 'Live App',
         url: 'https://www.cheatsheet.live/',
         role: 'Public web app'
+      },
+      {
+        name: 'Admin Dashboard',
+        url: 'https://admin.cheatsheet.live/',
+        role: 'Content & operations'
       }
     ]
   }

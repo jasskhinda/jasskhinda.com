@@ -306,29 +306,31 @@ const latestBuilds = [
   },
   {
     name: 'CheatSheet',
-    tagline: 'Knowledge & Reference App',
-    description: 'A live, searchable knowledge platform that turns scattered notes, snippets, and reference material into a fast, organized cheat sheet you can pull up anywhere.',
+    tagline: 'Handicapper Marketplace',
+    description: 'A two-sided subscription marketplace connecting sports betting handicappers with everyday sports bettors. Not a gambling site — handicappers run their business on the platform, bettors subscribe to follow their picks. Built around recurring revenue, leaderboards, and a real-time picks feed.',
     icon: BookOpen,
     accent: 'from-emerald-500/20 to-teal-600/20',
     border: 'border-emerald-400/40',
     iconColor: 'text-emerald-400',
-    tech: ['Next.js', 'React', 'Tailwind CSS', 'Real-time Search'],
+    tech: ['Next.js', 'React', 'Tailwind CSS', 'Stripe Subscriptions', 'Real-time', 'Supabase'],
     features: [
-      'Fast full-text search across content',
-      'Organized categories & tags',
-      'Clean, distraction-free reading UI',
-      'Responsive across desktop & mobile'
+      'Two-sided marketplace: handicappers ($20/mo) + subscribers ($5/mo per follow)',
+      'Handicapper back office: analytics, win/loss tracking, follower management',
+      'Real-time picks feed for subscribers',
+      'Discovery by sport, win rate, and featured status',
+      'Automated revenue split — $3 to handicapper, $2 to platform per follow',
+      'Sportsbook affiliate integrations (DraftKings, FanDuel, BetMGM, Caesars)'
     ],
     apps: [
       {
         name: 'Live App',
         url: 'https://www.cheatsheet.live/',
-        role: 'Public web app'
+        role: 'Public marketplace'
       },
       {
         name: 'Admin Dashboard',
         url: 'https://admin.cheatsheet.live/',
-        role: 'Content & operations'
+        role: 'Operations & moderation'
       }
     ]
   }

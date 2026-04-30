@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { ExternalLink, Star, Zap, Eye, Code2, Rocket, Smartphone, Hammer, BookOpen, Shield } from 'lucide-react'
+import { ExternalLink, Star, Zap, Eye, Code2, Rocket, Smartphone, Hammer, BookOpen, Shield, ShoppingCart } from 'lucide-react'
 
 const webApps = [
   {
@@ -333,6 +333,38 @@ const latestBuilds = [
         role: 'Operations & moderation'
       }
     ]
+  },
+  {
+    name: 'KFresh Supermarket',
+    tagline: 'Full-Stack E-Commerce Platform',
+    description: 'A production e-commerce platform built for a real African & international grocery store in Nepean, Ontario. Two independent Next.js apps sharing a single Supabase backend — customer storefront and full admin operations panel.',
+    icon: ShoppingCart,
+    accent: 'from-rose-500/20 to-pink-600/20',
+    border: 'border-rose-400/40',
+    iconColor: 'text-rose-400',
+    tech: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind v4', 'Supabase', 'Stripe', 'Zustand', 'TanStack Query', 'Python', 'GA4', 'PostHog'],
+    features: [
+      'Two-app architecture: customer store + admin, shared Supabase backend',
+      'Cooked meals with custom options, Stripe checkout & in-store pickup scheduling',
+      'Grocery shopping via Uber Eats / DoorDash with UTM-tracked redirects',
+      'Admin: full product/category/order CRUD, TipTap rich editor, multi-image upload',
+      'Reports: revenue charts, category performance, top products, inventory health',
+      'Bulk product import from Excel, CSV, and DOCX (Python tooling)',
+      'Customer accounts, reviews, wishlist, saved payment methods',
+      'Role-based access (admin / super_admin), media gallery, CSV exports'
+    ],
+    apps: [
+      {
+        name: 'Customer Store',
+        url: 'https://kfresh.ca/',
+        role: 'Public storefront'
+      },
+      {
+        name: 'Admin Dashboard',
+        url: 'https://dashboard.kfresh.ca/',
+        role: 'Operations & inventory'
+      }
+    ]
   }
 ]
 
@@ -357,15 +389,6 @@ const featuredProject = {
 }
 
 const otherProjects = [
-  {
-    title: 'KFresh Organic Groceries',
-    description: 'Premium organic grocery e-commerce platform with advanced filtering and ordering',
-    tech: ['WordPress', 'WooCommerce', 'Custom PHP'],
-    type: 'E-commerce Platform',
-    status: 'Live Production',
-    url: 'http://kfresh.ca/',
-    highlights: ['Organic product catalog', 'Advanced search', 'Order management']
-  },
   {
     title: 'Fenning Farms',
     description: 'Agricultural business website with product showcase and contact system',
